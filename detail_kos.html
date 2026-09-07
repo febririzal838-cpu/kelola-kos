@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kamar Executive A1 – Detail Kost | KelolaKos</title>
+  <meta name="description" content="Lihat detail lengkap Kamar Executive A1 di Tebet, Jakarta Selatan. Fasilitas AC, WiFi, Kamar Mandi Dalam. Mulai Rp 2,2 juta/bulan."/>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-primary-fixed-variant": "#4029ba",
+            "background": "#f1fbff",
+            "on-background": "#131d21",
+            "tertiary-fixed-dim": "#ffb4a3",
+            "surface-container-low": "#eaf5fa",
+            "error-container": "#ffdad6",
+            "surface-tint": "#5847d2",
+            "primary-container": "#6c5ce7",
+            "tertiary-container": "#b95239",
+            "on-error": "#ffffff",
+            "secondary": "#006b55",
+            "on-primary-container": "#faf6ff",
+            "on-tertiary-fixed": "#3d0700",
+            "surface-container": "#e4f0f4",
+            "surface-container-highest": "#d9e4e9",
+            "on-secondary-fixed-variant": "#005140",
+            "secondary-fixed": "#6dfad2",
+            "inverse-surface": "#283236",
+            "surface-variant": "#d9e4e9",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#131d21",
+            "on-secondary-container": "#00725b",
+            "secondary-fixed-dim": "#4bddb7",
+            "outline-variant": "#c8c4d7",
+            "surface-container-high": "#dfeaef",
+            "outline": "#787586",
+            "primary-fixed-dim": "#c6bfff",
+            "on-primary-fixed": "#160066",
+            "on-tertiary-fixed-variant": "#812914",
+            "on-primary": "#ffffff",
+            "on-secondary": "#ffffff",
+            "tertiary": "#993a24",
+            "tertiary-fixed": "#ffdad2",
+            "secondary-container": "#6dfad2",
+            "on-surface-variant": "#474554",
+            "on-error-container": "#93000a",
+            "surface-bright": "#f1fbff",
+            "error": "#ba1a1a",
+            "surface": "#f1fbff",
+            "primary-fixed": "#e4dfff",
+            "inverse-primary": "#c6bfff",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#fff6f4",
+            "inverse-on-surface": "#e7f3f7",
+            "on-secondary-fixed": "#002018",
+            "primary": "#5341cd",
+            "surface-dim": "#d1dce0"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            "2xl": "1rem",
+            "3xl": "1.5rem",
+            full: "9999px"
+          },
+          spacing: {
+            "stack-sm": "8px",
+            "stack-lg": "24px",
+            "topbar-height": "72px",
+            "sidebar-width": "260px",
+            "stack-md": "16px",
+            "container-padding": "32px",
+            "gutter": "24px"
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"]
+          },
+          fontSize: {
+            "display-lg": ["32px", {lineHeight: "40px", letterSpacing: "-0.02em", fontWeight: "700"}],
+            "headline-md-mobile": ["20px", {lineHeight: "28px", fontWeight: "600"}],
+            "body-lg": ["16px", {lineHeight: "24px", fontWeight: "400"}],
+            "label-md": ["13px", {lineHeight: "18px", letterSpacing: "0.05em", fontWeight: "600"}],
+            "headline-md": ["24px", {lineHeight: "32px", letterSpacing: "-0.01em", fontWeight: "600"}],
+            "headline-sm": ["20px", {lineHeight: "28px", fontWeight: "600"}],
+            "label-sm": ["12px", {lineHeight: "16px", fontWeight: "500"}],
+            "body-md": ["14px", {lineHeight: "20px", fontWeight: "400"}]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    * { font-family: 'Inter', sans-serif; }
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+      display: inline-flex;
+      align-items: center;
+    }
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1fbff; }
+    ::-webkit-scrollbar-thumb { background: #d9e4e9; border-radius: 10px; }
+
+    #main-gallery-img {
+      transition: opacity 0.35s cubic-bezier(0.4,0,0.2,1), transform 0.35s cubic-bezier(0.4,0,0.2,1);
+    }
+    #main-gallery-img.fading { opacity: 0; transform: scale(1.03); }
+    .thumb-btn {
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .thumb-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 8px;
+      border: 2.5px solid transparent;
+      transition: border-color 0.2s;
+      pointer-events: none;
+    }
+    .thumb-btn.active::after { border-color: #5341cd; }
+    .thumb-btn img { transition: transform 0.3s ease; }
+    .thumb-btn:hover img { transform: scale(1.07); }
+
+    .sticky-widget { position: sticky; top: 88px; }
+    @media (max-width: 1024px) { .sticky-widget { position: relative; top: 0; } }
+
+    .facility-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background: #ffffff;
+      border: 1px solid rgba(120,117,134,0.18);
+      border-radius: 12px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .facility-chip:hover {
+      border-color: rgba(83,65,205,0.35);
+      box-shadow: 0 4px 12px rgba(83,65,205,0.08);
+      transform: translateY(-1px);
+    }
+
+    .booking-widget {
+      background: #ffffff;
+      border: 1px solid rgba(120,117,134,0.2);
+      border-radius: 20px;
+      box-shadow: 0 8px 32px rgba(83,65,205,0.10), 0 2px 8px rgba(0,0,0,0.04);
+    }
+
+    .price-toggle-btn {
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      outline: none;
+      background: transparent;
+      color: #474554;
+    }
+    .price-toggle-btn.active {
+      background: #5341cd;
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(83,65,205,0.25);
+    }
+    .price-toggle-btn:not(.active):hover { background: #eaf5fa; }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #5341cd 0%, #6c5ce7 100%);
+      color: #fff;
+      border: none;
+      border-radius: 14px;
+      padding: 14px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 16px rgba(83,65,205,0.28);
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(83,65,205,0.38); }
+    .btn-primary:active { transform: scale(0.97); }
+
+    .btn-wa {
+      background: #ffffff;
+      color: #25d366;
+      border: 1.5px solid #25d366;
+      border-radius: 14px;
+      padding: 12px 24px;
+      font-size: 14px;
+      font-weight: 700;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+    .btn-wa:hover { background: #25d366; color: #fff; transform: translateY(-1px); box-shadow: 0 4px 14px rgba(37,211,102,0.25); }
+
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(120,117,134,0.2), transparent);
+      margin: 24px 0;
+    }
+
+    .spec-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(120,117,134,0.1);
+    }
+    .spec-row:last-child { border-bottom: none; }
+
+    .review-card {
+      background: #ffffff;
+      border: 1px solid rgba(120,117,134,0.14);
+      border-radius: 16px;
+      padding: 20px;
+      transition: box-shadow 0.2s;
+    }
+    .review-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+
+    .avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      color: #fff;
+      flex-shrink: 0;
+    }
+
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #131d21;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-size: 14px;
+      font-weight: 500;
+      z-index: 9999;
+      opacity: 0;
+      transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+    #toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    #lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      z-index: 9998;
+      align-items: center;
+      justify-content: center;
+      backdrop-filter: blur(6px);
+    }
+    #lightbox.open { display: flex; }
+    #lightbox img {
+      max-width: 90vw;
+      max-height: 85vh;
+      border-radius: 12px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+      object-fit: contain;
+    }
+    #lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 24px;
+      background: rgba(255,255,255,0.12);
+      border: none;
+      color: #fff;
+      border-radius: 999px;
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    #lightbox-close:hover { background: rgba(255,255,255,0.22); }
+
+    nav.main-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: 72px;
+      background: rgba(241,251,255,0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(120,117,134,0.15);
+    }
+  </style>
+</head>
+<body class="bg-background font-sans text-on-surface" style="min-height:100dvh;">
+
+  <!-- NAVBAR -->
+  <nav class="main-nav flex items-center justify-between px-6 md:px-10">
+    <div class="flex items-center gap-3">
+      <a href="cari_kos.html" class="flex items-center gap-2.5 group" id="nav-logo-link">
+        <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings:'FILL' 1;">domain</span>
+        <span class="text-xl font-extrabold text-primary tracking-tight group-hover:opacity-80 transition-opacity">KelolaKos</span>
+      </a>
+    </div>
+    <div class="hidden md:flex items-center gap-1.5 text-body-md text-on-surface-variant flex-1 ml-8">
+      <a href="cari_kos.html" class="hover:text-primary transition-colors" id="nav-cari-link">Cari Kost</a>
+      <span class="text-on-surface-variant material-symbols-outlined text-[16px]">chevron_right</span>
+      <span class="text-on-surface font-semibold truncate max-w-[200px]">Kamar Executive A1</span>
+    </div>
+    <div class="flex items-center gap-3">
+      <a id="nav-back-btn" href="cari_kos.html"
+         class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-full text-label-md text-on-surface-variant border border-outline-variant bg-surface-container-lowest hover:border-primary hover:text-primary transition-all">
+        <span class="material-symbols-outlined text-[18px]">arrow_back</span> Kembali
+      </a>
+      <a href="login_daftar.php" id="nav-login-btn"
+         class="inline-flex items-center justify-center px-5 py-2.5 rounded-full text-label-md font-bold bg-primary text-on-primary hover:bg-primary-container transition-all shadow-sm shadow-primary/20">
+        Masuk / Daftar
+      </a>
+    </div>
+  </nav>
+
+  <!-- MAIN LAYOUT -->
+  <main class="max-w-[1400px] mx-auto px-4 md:px-8 lg:px-10 py-8 pb-20">
+    <div class="grid gap-8 lg:grid-cols-[1fr_380px] xl:grid-cols-[1fr_400px]">
+
+      <!-- LEFT: Gallery + Details -->
+      <div class="space-y-8">
+
+        <!-- GALLERY -->
+        <section id="gallery-section" aria-label="Galeri Foto Kamar">
+          <div class="relative rounded-2xl overflow-hidden bg-surface-container-high cursor-zoom-in" style="height:clamp(240px,40vw,460px);" onclick="openLightbox(currentMainSrc)">
+            <img id="main-gallery-img"
+                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdFUQGy5O8wafsrNaqbPKcAXngRR8ERkhSx146sD6jRqJJ_yZ857CVKy-CqR29hU6tg6S_HNEtro6F_nb90mrp_T91UEwuoJGKeui1FOC9LE46JCB8synuoOhCzxzGRnOS8Q6WXOlbGnUecZQ00IB8mNp4UbOSUYqUCNmOrbaWiLyOcan1ySWVFEqtTEt-OBokzCPetcuQfKSlE6QsrYlGS1qSYSf8P8G_-WudhFym8icJuoLORLX37AaQdS4nmk_rM3vmUeGuogCz"
+                 alt="Foto utama kamar Executive A1" class="w-full h-full object-cover"/>
+            <div class="absolute bottom-4 right-4 bg-black/50 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full flex items-center gap-1.5 pointer-events-none">
+              <span class="material-symbols-outlined text-[14px]">zoom_in</span> Perbesar
+            </div>
+            <div class="absolute bottom-4 left-4 bg-black/50 backdrop-blur-sm text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5 pointer-events-none">
+              <span class="material-symbols-outlined text-[14px]">photo_library</span>
+              <span id="photo-count-text">1 / 5</span>
+            </div>
+          </div>
+          <div class="mt-3 flex gap-2.5 overflow-x-auto pb-1">
+            <button class="thumb-btn active flex-shrink-0 h-[80px] w-[100px] rounded-lg overflow-hidden"
+                    data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdFUQGy5O8wafsrNaqbPKcAXngRR8ERkhSx146sD6jRqJJ_yZ857CVKy-CqR29hU6tg6S_HNEtro6F_nb90mrp_T91UEwuoJGKeui1FOC9LE46JCB8synuoOhCzxzGRnOS8Q6WXOlbGnUecZQ00IB8mNp4UbOSUYqUCNmOrbaWiLyOcan1ySWVFEqtTEt-OBokzCPetcuQfKSlE6QsrYlGS1qSYSf8P8G_-WudhFym8icJuoLORLX37AaQdS4nmk_rM3vmUeGuogCz"
+                    data-label="Kamar Utama" data-index="1" id="thumb-0" onclick="switchGallery(this)" type="button">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdFUQGy5O8wafsrNaqbPKcAXngRR8ERkhSx146sD6jRqJJ_yZ857CVKy-CqR29hU6tg6S_HNEtro6F_nb90mrp_T91UEwuoJGKeui1FOC9LE46JCB8synuoOhCzxzGRnOS8Q6WXOlbGnUecZQ00IB8mNp4UbOSUYqUCNmOrbaWiLyOcan1ySWVFEqtTEt-OBokzCPetcuQfKSlE6QsrYlGS1qSYSf8P8G_-WudhFym8icJuoLORLX37AaQdS4nmk_rM3vmUeGuogCz" alt="Kamar Utama" class="w-full h-full object-cover"/>
+            </button>
+            <button class="thumb-btn flex-shrink-0 h-[80px] w-[100px] rounded-lg overflow-hidden"
+                    data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7C4IsvgXAAUJSimUWv0hQxYrdo9r0YFWLijPjDfwHv4L3L1kXkdeHPhc_Z9SfzYsVDhu9sVNInJu2aIe5ebZTVPmO60VemQsGfYMPg_STVhEEKtbtJPOlJ66SaB9_074NP7A5AJRgUbv6jPW7yxchdbmQ2F6DVXhURqe-y7qCLI6erWeYvTbiuzzAiYnMaPMWqiWFIjdDrrI2ZGIMrMC43oTDPDUY5kSOfb2KIDdw8-ZnLGNeScc9kn4Hf2prxGlJfm98-valiJ9B"
+                    data-label="Kamar Mandi" data-index="2" id="thumb-1" onclick="switchGallery(this)" type="button">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7C4IsvgXAAUJSimUWv0hQxYrdo9r0YFWLijPjDfwHv4L3L1kXkdeHPhc_Z9SfzYsVDhu9sVNInJu2aIe5ebZTVPmO60VemQsGfYMPg_STVhEEKtbtJPOlJ66SaB9_074NP7A5AJRgUbv6jPW7yxchdbmQ2F6DVXhURqe-y7qCLI6erWeYvTbiuzzAiYnMaPMWqiWFIjdDrrI2ZGIMrMC43oTDPDUY5kSOfb2KIDdw8-ZnLGNeScc9kn4Hf2prxGlJfm98-valiJ9B" alt="Kamar Mandi" class="w-full h-full object-cover"/>
+            </button>
+            <button class="thumb-btn flex-shrink-0 h-[80px] w-[100px] rounded-lg overflow-hidden"
+                    data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuxbTBz2YnxENVpzIHuGC1kC4LsqOFx3NddDShf3Q-09R3Z7BJjrd3hv4CUJvNpxOzTavnXQY2XRRAROVs1_63CZdJQXILoK98-iH3q9OspOfzZjKWGSZ7pIpmlGi_B_9gZxBrt0DkzoxgpNRD8c0y9zwgwX2YLCdwk1W67hRCPcoIbFz6-Qnuu-M8i-7QuPaK0XTTZtPMZLnWisaF9r3jlzkD8kAvGS3pLAofjMZcrkL6ekQaSB2TV_o6-iziOh50STtar7ad3KVt"
+                    data-label="Ruang Bersama" data-index="3" id="thumb-2" onclick="switchGallery(this)" type="button">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuxbTBz2YnxENVpzIHuGC1kC4LsqOFx3NddDShf3Q-09R3Z7BJjrd3hv4CUJvNpxOzTavnXQY2XRRAROVs1_63CZdJQXILoK98-iH3q9OspOfzZjKWGSZ7pIpmlGi_B_9gZxBrt0DkzoxgpNRD8c0y9zwgwX2YLCdwk1W67hRCPcoIbFz6-Qnuu-M8i-7QuPaK0XTTZtPMZLnWisaF9r3jlzkD8kAvGS3pLAofjMZcrkL6ekQaSB2TV_o6-iziOh50STtar7ad3KVt" alt="Ruang Bersama" class="w-full h-full object-cover"/>
+            </button>
+            <button class="thumb-btn flex-shrink-0 h-[80px] w-[100px] rounded-lg overflow-hidden"
+                    data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPKLqIRCcLIQ8-ewRkUya_sHCCh-xJLJ0WQozgL9Vw7s0uTU2pnScfLng47IhbR4NRfL0Sdxe670TCpG5diK_beJ2qAS7KXmkf2AADVdl46JlhY_fsnpMqMuXJ--Vm8WwPl5xQLD362_N521iiVQYQOs5FUzatZrMJyHa51JTLS2HHxUy932auPu4TtXmiD8bOn2d7XFtEg_V8zHSGjOG6UZ35eAV6OiCJJSDhQkJCdmWUKYpA8Zr5Cga44KTajECwAplvBIMvQy6A"
+                    data-label="Dapur" data-index="4" id="thumb-3" onclick="switchGallery(this)" type="button">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPKLqIRCcLIQ8-ewRkUya_sHCCh-xJLJ0WQozgL9Vw7s0uTU2pnScfLng47IhbR4NRfL0Sdxe670TCpG5diK_beJ2qAS7KXmkf2AADVdl46JlhY_fsnpMqMuXJ--Vm8WwPl5xQLD362_N521iiVQYQOs5FUzatZrMJyHa51JTLS2HHxUy932auPu4TtXmiD8bOn2d7XFtEg_V8zHSGjOG6UZ35eAV6OiCJJSDhQkJCdmWUKYpA8Zr5Cga44KTajECwAplvBIMvQy6A" alt="Dapur" class="w-full h-full object-cover"/>
+            </button>
+            <button class="thumb-btn flex-shrink-0 h-[80px] w-[100px] rounded-lg overflow-hidden"
+                    data-src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7uNAjNJRkdkfZYmjQBBls9PBbD0LXk-Bo-QlIpO6IxAa3YRyG1XaCjafqpmSaXWoOGVdxqTdD942z210XxUTjs8jI6y6QR6faMHrjuR5W-Ko3KC7meDxdhXxXRZ8gFmVfsIvaf1ZKufT7IHgOjL1muxOjLWCO6FMB2sq7dmGjUV-kEzKI5izXLkGV86mTKUT5JXpYSKXLcFI4Cunh35Evx40QL5JRdYdBFZwoqtTBdBRO0ntKHuho4nf2BFlD4_cuvFIa35aMygJZ"
+                    data-label="Area Parkir" data-index="5" id="thumb-4" onclick="switchGallery(this)" type="button">
+              <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7uNAjNJRkdkfZYmjQBBls9PBbD0LXk-Bo-QlIpO6IxAa3YRyG1XaCjafqpmSaXWoOGVdxqTdD942z210XxUTjs8jI6y6QR6faMHrjuR5W-Ko3KC7meDxdhXxXRZ8gFmVfsIvaf1ZKufT7IHgOjL1muxOjLWCO6FMB2sq7dmGjUV-kEzKI5izXLkGV86mTKUT5JXpYSKXLcFI4Cunh35Evx40QL5JRdYdBFZwoqtTBdBRO0ntKHuho4nf2BFlD4_cuvFIa35aMygJZ" alt="Area Parkir" class="w-full h-full object-cover"/>
+            </button>
+          </div>
+          <div class="mt-1 flex gap-2.5 overflow-x-auto">
+            <span class="flex-shrink-0 w-[100px] text-center text-[10px] font-medium text-on-surface-variant/70 px-1">Kamar Utama</span>
+            <span class="flex-shrink-0 w-[100px] text-center text-[10px] font-medium text-on-surface-variant/70 px-1">Kamar Mandi</span>
+            <span class="flex-shrink-0 w-[100px] text-center text-[10px] font-medium text-on-surface-variant/70 px-1">Ruang Bersama</span>
+            <span class="flex-shrink-0 w-[100px] text-center text-[10px] font-medium text-on-surface-variant/70 px-1">Dapur</span>
+            <span class="flex-shrink-0 w-[100px] text-center text-[10px] font-medium text-on-surface-variant/70 px-1">Area Parkir</span>
+          </div>
+        </section>
+
+        <!-- INFO UTAMA -->
+        <section id="info-section" aria-label="Informasi Utama Kost">
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6 shadow-sm space-y-4">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-[11px] font-bold text-primary uppercase tracking-wider">
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">person</span>Putra
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-secondary/10 px-3 py-1 text-[11px] font-bold text-secondary uppercase tracking-wider">
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">check_circle</span>Terverifikasi
+              </span>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-tertiary/10 px-3 py-1 text-[11px] font-bold text-tertiary uppercase tracking-wider">
+                <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">bed</span>5 Kamar Tersedia
+              </span>
+            </div>
+            <div>
+              <h1 class="text-[28px] font-extrabold text-on-background leading-tight" style="letter-spacing:-0.02em;">Kamar Executive A1</h1>
+              <p class="mt-2 flex items-center gap-2 text-body-lg text-on-surface-variant">
+                <span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings:'FILL' 1;">location_on</span>
+                Jl. Tebet Raya No. 17, Tebet, Jakarta Selatan, DKI Jakarta 12810
+              </p>
+            </div>
+            <div class="flex flex-wrap gap-6 pt-2">
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-amber-500 text-[20px]" style="font-variation-settings:'FILL' 1;">star</span>
+                <span class="font-bold text-on-surface">4.8</span>
+                <span class="text-body-md text-on-surface-variant">(24 ulasan)</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[20px]">groups</span>
+                <span class="text-body-md text-on-surface-variant">Dikelola oleh <span class="font-semibold text-on-surface">Pak Hendra</span></span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary text-[20px]">calendar_month</span>
+                <span class="text-body-md text-on-surface-variant">Bergabung sejak 2021</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FASILITAS KAMAR + UMUM -->
+        <section id="fasilitas-section" aria-label="Fasilitas Kamar">
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6 shadow-sm">
+            <h2 class="text-[18px] font-bold text-on-background mb-5 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">bed</span>Fasilitas Kamar
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div class="facility-chip"><span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings:'FILL' 1;">king_bed</span><span class="text-body-md font-medium text-on-surface">Kasur Single</span></div>
+              <div class="facility-chip"><span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings:'FILL' 1;">ac_unit</span><span class="text-body-md font-medium text-on-surface">AC Split</span></div>
+              <div class="facility-chip"><span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings:'FILL' 1;">desk</span><span class="text-body-md font-medium text-on-surface">Meja Kerja</span></div>
+              <div class="facility-chip"><span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings:'FILL' 1;">door_sliding</span><span class="text-body-md font-medium text-on-surface">Lemari Pakaian</span></div>
+              <div class="facility-chip"><span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings:'FILL' 1;">shower</span><span class="text-body-md font-medium text-on-surface">KM Dalam</span></div>
+              <div class="facility-chip"><span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings:'FILL' 1;">water_heater</span><span class="text-body-md font-medium text-on-surface">Water Heater</span></div>
+              <div class="facility-chip"><span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings:'FILL' 1;">curtains</span><span class="text-body-md font-medium text-on-surface">Jendela + Tirai</span></div>
+              <div class="facility-chip"><span class="material-symbols-outlined text-primary text-[22px]" style="font-variation-settings:'FILL' 1;">outlet</span><span class="text-body-md font-medium text-on-surface">Stopkontak x3</span></div>
+            </div>
+            <div class="section-divider"></div>
+            <h2 class="text-[18px] font-bold text-on-background mb-5 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">apartment</span>Fasilitas Umum
+            </h2>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div class="facility-chip"><span class="material-symbols-outlined text-secondary text-[22px]" style="font-variation-settings:'FILL' 1;">wifi</span><span class="text-body-md font-medium text-on-surface">WiFi 50 Mbps</span></div>
+              <div class="facility-chip"><span class="material-symbols-outlined text-secondary text-[22px]" style="font-variation-settings:'FILL' 1;">local_parking</span><span class="text-body-md font-medium text-on-surface">Parkir Motor</span></div>
+              <div class="facility-chip"><span class="material-symbols-outlined text-secondary text-[22px]" style="font-variation-settings:'FILL' 1;">security</span><span class="text-body-md font-medium text-on-surface">CCTV 24 Jam</span></div>
+              <div class="facility-chip"><span class="material-symbols-outlined text-secondary text-[22px]" style="font-variation-settings:'FILL' 1;">kitchen</span><span class="text-body-md font-medium text-on-surface">Dapur Bersama</span></div>
+              <div class="facility-chip"><span class="material-symbols-outlined text-secondary text-[22px]" style="font-variation-settings:'FILL' 1;">local_laundry_service</span><span class="text-body-md font-medium text-on-surface">Laundry Kiloan</span></div>
+              <div class="facility-chip"><span class="material-symbols-outlined text-secondary text-[22px]" style="font-variation-settings:'FILL' 1;">sports_esports</span><span class="text-body-md font-medium text-on-surface">Ruang Santai</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SPESIFIKASI & ATURAN -->
+        <section id="spesifikasi-section" aria-label="Spesifikasi dan Aturan">
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6 shadow-sm">
+            <h2 class="text-[18px] font-bold text-on-background mb-5 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">info</span>Spesifikasi Kamar
+            </h2>
+            <div>
+              <div class="spec-row">
+                <span class="material-symbols-outlined text-primary text-[20px]">straighten</span>
+                <span class="text-body-md text-on-surface-variant w-36 flex-shrink-0">Ukuran Kamar</span>
+                <span class="text-body-md font-semibold text-on-surface">3 m x 4 m (12 m²)</span>
+              </div>
+              <div class="spec-row">
+                <span class="material-symbols-outlined text-primary text-[20px]">bolt</span>
+                <span class="text-body-md text-on-surface-variant w-36 flex-shrink-0">Listrik</span>
+                <span class="text-body-md font-semibold text-on-surface">Token 1300 VA (termasuk harga)</span>
+              </div>
+              <div class="spec-row">
+                <span class="material-symbols-outlined text-primary text-[20px]">water_drop</span>
+                <span class="text-body-md text-on-surface-variant w-36 flex-shrink-0">Air</span>
+                <span class="text-body-md font-semibold text-on-surface">PDAM (termasuk harga)</span>
+              </div>
+              <div class="spec-row">
+                <span class="material-symbols-outlined text-primary text-[20px]">staircase</span>
+                <span class="text-body-md text-on-surface-variant w-36 flex-shrink-0">Lantai</span>
+                <span class="text-body-md font-semibold text-on-surface">Lantai 2 (tanpa lift)</span>
+              </div>
+              <div class="spec-row">
+                <span class="material-symbols-outlined text-primary text-[20px]">contract</span>
+                <span class="text-body-md text-on-surface-variant w-36 flex-shrink-0">Kontrak Min.</span>
+                <span class="text-body-md font-semibold text-on-surface">1 Bulan</span>
+              </div>
+              <div class="spec-row">
+                <span class="material-symbols-outlined text-primary text-[20px]">payments</span>
+                <span class="text-body-md text-on-surface-variant w-36 flex-shrink-0">Deposit</span>
+                <span class="text-body-md font-semibold text-on-surface">1x harga sewa</span>
+              </div>
+            </div>
+            <div class="section-divider"></div>
+            <h2 class="text-[18px] font-bold text-on-background mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-error" style="font-variation-settings:'FILL' 1;">rule</span>Aturan Kost
+            </h2>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-error text-[18px] mt-0.5" style="font-variation-settings:'FILL' 1;">cancel</span>
+                <span class="text-body-md text-on-surface-variant">Dilarang merokok di dalam kamar dan area bersama</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-error text-[18px] mt-0.5" style="font-variation-settings:'FILL' 1;">cancel</span>
+                <span class="text-body-md text-on-surface-variant">Tidak diperbolehkan membawa hewan peliharaan</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-error text-[18px] mt-0.5" style="font-variation-settings:'FILL' 1;">cancel</span>
+                <span class="text-body-md text-on-surface-variant">Tamu hanya boleh berkunjung pukul 08.00 – 22.00 WIB</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>
+                <span class="text-body-md text-on-surface-variant">Akses 24 jam dengan kunci digital</span>
+              </li>
+              <li class="flex items-start gap-3">
+                <span class="material-symbols-outlined text-secondary text-[18px] mt-0.5" style="font-variation-settings:'FILL' 1;">check_circle</span>
+                <span class="text-body-md text-on-surface-variant">Pembayaran sewa setiap tanggal 1–5 tiap bulan</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- LOKASI -->
+        <section id="lokasi-section" aria-label="Lokasi Kost">
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6 shadow-sm">
+            <h2 class="text-[18px] font-bold text-on-background mb-4 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">location_on</span>Lokasi dan Sekitar
+            </h2>
+            <div class="relative w-full rounded-xl overflow-hidden bg-gradient-to-br from-surface-container to-surface-container-high flex items-center justify-center" style="height:200px;">
+              <div class="text-center space-y-2 relative z-10">
+                <span class="material-symbols-outlined text-primary text-[48px]" style="font-variation-settings:'FILL' 1;">map</span>
+                <p class="text-body-md font-semibold text-on-surface">Jl. Tebet Raya No. 17, Tebet</p>
+                <p class="text-body-md text-on-surface-variant">Jakarta Selatan, DKI Jakarta</p>
+                <a href="https://maps.google.com/?q=Tebet,Jakarta+Selatan" target="_blank" rel="noopener noreferrer"
+                   class="inline-flex items-center gap-1.5 text-primary text-label-md hover:underline" id="maps-link">
+                  <span class="material-symbols-outlined text-[16px]">open_in_new</span>Buka di Google Maps
+                </a>
+              </div>
+              <div class="absolute inset-0 pointer-events-none" style="background-image:linear-gradient(rgba(83,65,205,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(83,65,205,0.04) 1px,transparent 1px);background-size:32px 32px;"></div>
+            </div>
+            <div class="mt-4 grid grid-cols-2 gap-3">
+              <div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-[18px]">directions_transit</span><span class="text-body-md text-on-surface-variant">Stasiun Tebet <span class="font-semibold text-on-surface">±300 m</span></span></div>
+              <div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-[18px]">shopping_bag</span><span class="text-body-md text-on-surface-variant">Minimarket <span class="font-semibold text-on-surface">±50 m</span></span></div>
+              <div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-[18px]">local_hospital</span><span class="text-body-md text-on-surface-variant">Puskesmas <span class="font-semibold text-on-surface">±500 m</span></span></div>
+              <div class="flex items-center gap-2.5"><span class="material-symbols-outlined text-primary text-[18px]">restaurant</span><span class="text-body-md text-on-surface-variant">Warung Makan <span class="font-semibold text-on-surface">±100 m</span></span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ULASAN -->
+        <section id="ulasan-section" aria-label="Ulasan Penyewa">
+          <div class="bg-surface-container-lowest rounded-2xl border border-outline-variant/20 p-6 shadow-sm">
+            <div class="flex items-center justify-between mb-6">
+              <h2 class="text-[18px] font-bold text-on-background flex items-center gap-2">
+                <span class="material-symbols-outlined text-primary" style="font-variation-settings:'FILL' 1;">reviews</span>Ulasan Penyewa
+              </h2>
+              <div class="flex items-center gap-2">
+                <div class="flex gap-0.5">
+                  <span class="material-symbols-outlined text-amber-500 text-[18px]" style="font-variation-settings:'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-amber-500 text-[18px]" style="font-variation-settings:'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-amber-500 text-[18px]" style="font-variation-settings:'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-amber-500 text-[18px]" style="font-variation-settings:'FILL' 1;">star</span>
+                  <span class="material-symbols-outlined text-amber-500 text-[18px]" style="font-variation-settings:'FILL' 1;">star_half</span>
+                </div>
+                <span class="font-bold text-on-surface">4.8</span>
+                <span class="text-body-md text-on-surface-variant">(24)</span>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div class="review-card">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="avatar" style="background:linear-gradient(135deg,#5341cd,#6c5ce7);">B</div>
+                  <div>
+                    <p class="font-semibold text-on-surface text-[14px]">Budi S.</p>
+                    <p class="text-label-sm text-on-surface-variant">Penyewa sejak Jul 2025</p>
+                  </div>
+                  <div class="ml-auto flex gap-0.5">
+                    <span class="material-symbols-outlined text-amber-500 text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-amber-500 text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-amber-500 text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-amber-500 text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-amber-500 text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+                  </div>
+                </div>
+                <p class="text-body-md text-on-surface-variant leading-relaxed">Kamar bersih dan nyaman, AC dingin, WiFi lancar. Pak Hendra juga responsif kalau ada kebutuhan. Sangat direkomendasikan!</p>
+              </div>
+              <div class="review-card">
+                <div class="flex items-center gap-3 mb-3">
+                  <div class="avatar" style="background:linear-gradient(135deg,#006b55,#4bddb7);">R</div>
+                  <div>
+                    <p class="font-semibold text-on-surface text-[14px]">Rizky P.</p>
+                    <p class="text-label-sm text-on-surface-variant">Penyewa sejak Mar 2025</p>
+                  </div>
+                  <div class="ml-auto flex gap-0.5">
+                    <span class="material-symbols-outlined text-amber-500 text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-amber-500 text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-amber-500 text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-amber-500 text-[14px]" style="font-variation-settings:'FILL' 1;">star</span>
+                    <span class="material-symbols-outlined text-on-surface-variant text-[14px]">star</span>
+                  </div>
+                </div>
+                <p class="text-body-md text-on-surface-variant leading-relaxed">Lokasi strategis dekat stasiun dan warung makan. Kamar Mandi dalam sangat membantu privasi. Satu minus kecil: tidak ada lift.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div><!-- /LEFT COLUMN -->
+
+      <!-- RIGHT: Sticky Booking Widget -->
+      <aside>
+        <div class="sticky-widget booking-widget p-6 space-y-5">
+
+          <!-- Price Toggle -->
+          <div>
+            <p class="text-label-sm text-on-surface-variant mb-2 uppercase tracking-wider">Pilih Periode Harga</p>
+            <div class="flex gap-1 bg-surface-container-low rounded-full p-1 w-fit">
+              <button class="price-toggle-btn active" id="btn-monthly" onclick="setPriceMode('monthly')" type="button">Per Bulan</button>
+              <button class="price-toggle-btn" id="btn-yearly" onclick="setPriceMode('yearly')" type="button">Per Tahun</button>
+            </div>
+          </div>
+
+          <!-- Price Display -->
+          <div class="bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl p-4 border border-primary/15">
+            <p class="text-label-sm text-primary/70 font-semibold uppercase tracking-wider mb-1" id="price-label">Harga Per Bulan</p>
+            <div class="flex items-end gap-2">
+              <p class="text-[32px] font-extrabold text-primary leading-none" id="price-value" style="letter-spacing:-0.02em;">Rp 2,2 jt</p>
+              <p class="text-body-md text-on-surface-variant pb-1" id="price-unit">/bulan</p>
+            </div>
+            <p class="text-label-sm text-secondary mt-2 hidden" id="price-savings">
+              <span class="material-symbols-outlined text-[14px]" style="font-variation-settings:'FILL' 1;">savings</span>
+              Hemat Rp 2,4 jt vs bulanan
+            </p>
+          </div>
+
+          <!-- Date Picker -->
+          <div>
+            <label class="block text-label-md font-semibold text-on-surface mb-2" for="move-in-date">
+              <span class="material-symbols-outlined text-[16px] text-primary">calendar_today</span>
+              Tanggal Mulai Sewa
+            </label>
+            <input type="date" id="move-in-date"
+                   class="w-full border border-outline-variant bg-surface-container-lowest rounded-xl px-4 py-3 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all cursor-pointer"
+                   style="color-scheme:light;"/>
+          </div>
+
+          <!-- Duration Picker -->
+          <div>
+            <label class="block text-label-md font-semibold text-on-surface mb-2" for="duration-select">
+              <span class="material-symbols-outlined text-[16px] text-primary">timer</span>
+              Durasi Sewa
+            </label>
+            <select id="duration-select"
+                    class="w-full border border-outline-variant bg-surface-container-lowest rounded-xl px-4 py-3 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all cursor-pointer"
+                    onchange="updateTotal()">
+              <option value="1">1 Bulan</option>
+              <option value="3">3 Bulan</option>
+              <option value="6">6 Bulan</option>
+              <option value="12">12 Bulan (1 Tahun)</option>
+            </select>
+          </div>
+
+          <!-- Total Estimate -->
+          <div class="flex items-center justify-between bg-surface-container-low rounded-xl px-4 py-3 border border-outline-variant/30">
+            <span class="text-body-md text-on-surface-variant">Estimasi Total</span>
+            <span class="font-bold text-on-surface text-[15px]" id="total-price">Rp 2.200.000</span>
+          </div>
+
+          <form id="booking-form" method="POST" action="proses_sewa.php">
+            <input type="hidden" name="kamar_id" value="1" />
+            <input type="hidden" name="tanggal_mulai" id="booking-start-date" value="" />
+            <input type="hidden" name="durasi_bulan" id="booking-duration" value="1" />
+            <button class="btn-primary" id="booking-btn" type="submit">
+              <span class="material-symbols-outlined text-[18px]" style="font-variation-settings:'FILL' 1;">home_work</span>
+              Ajukan Sewa / Booking
+            </button>
+          </form>
+
+          <!-- WhatsApp Button -->
+          <a class="btn-wa" href="https://wa.me/6281234567890?text=Halo%2C%20saya%20tertarik%20dengan%20Kamar%20Executive%20A1%20di%20Tebet.%20Apakah%20masih%20tersedia%3F"
+             target="_blank" rel="noopener noreferrer" id="wa-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="18" height="18">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            Chat WhatsApp Pemilik
+          </a>
+
+          <!-- Trust Signals -->
+          <div class="border-t border-outline-variant/30 pt-4 space-y-2.5">
+            <div class="flex items-center gap-2 text-body-md text-on-surface-variant">
+              <span class="material-symbols-outlined text-secondary text-[17px]" style="font-variation-settings:'FILL' 1;">verified_user</span>
+              <span>Properti terverifikasi KelolaKos</span>
+            </div>
+            <div class="flex items-center gap-2 text-body-md text-on-surface-variant">
+              <span class="material-symbols-outlined text-secondary text-[17px]" style="font-variation-settings:'FILL' 1;">lock</span>
+              <span>Transaksi aman &amp; terlindungi</span>
+            </div>
+            <div class="flex items-center gap-2 text-body-md text-on-surface-variant">
+              <span class="material-symbols-outlined text-secondary text-[17px]" style="font-variation-settings:'FILL' 1;">support_agent</span>
+              <span>Dukungan 7x24 jam</span>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-outline-variant/30 bg-surface px-8 py-16">
+    <div class="max-w-[1440px] mx-auto grid gap-10 md:grid-cols-2 lg:grid-cols-4">
+      <div class="space-y-6">
+        <div class="flex items-center gap-3">
+          <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings:'FILL' 1;">domain</span>
+          <span class="text-xl font-extrabold text-primary tracking-tight">KelolaKos</span>
+        </div>
+        <p class="text-body-md text-on-surface-variant leading-relaxed">Platform pencarian dan pengelolaan kost yang modern, cepat, dan terpercaya untuk penyewa dan pemilik.</p>
+        <div class="flex gap-4">
+          <a class="flex h-10 w-10 items-center justify-center rounded-full bg-surface-container text-on-surface-variant transition-all hover:bg-primary hover:text-on-primary" href="https://www.google.com" target="_blank" rel="noopener noreferrer" id="footer-web-link"><span class="material-symbols-outlined">public</span></a>
+          <a class="flex h-10 w-10 items-center justify-center rounded-full bg-surface-container text-on-surface-variant transition-all hover:bg-primary hover:text-on-primary" href="mailto:info@kelolakos.com" id="footer-email-link"><span class="material-symbols-outlined">alternate_email</span></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="mb-6 text-label-md font-bold text-on-surface">Navigasi</h4>
+        <ul class="space-y-4 text-body-md text-on-surface-variant">
+          <li><a class="hover:text-primary transition-colors" href="cari_kos.html" id="footer-cari-link">Cari Kost</a></li>
+          <li><a class="hover:text-primary transition-colors" href="dashboard_penyewa.php" id="footer-dp-link">Dashboard Penyewa</a></li>
+          <li><a class="hover:text-primary transition-colors" href="dashboard_pemilik_kos.php" id="footer-dpm-link">Dashboard Pemilik</a></li>
+          <li><a class="hover:text-primary transition-colors" href="login_daftar.php" id="footer-login-link">Login &amp; Daftar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="mb-6 text-label-md font-bold text-on-surface">Layanan</h4>
+        <ul class="space-y-4 text-body-md text-on-surface-variant">
+          <li><a class="hover:text-primary transition-colors" href="riwayat_penyewa.html" id="footer-riwayat-link">Riwayat Pembayaran</a></li>
+          <li><a class="hover:text-primary transition-colors" href="kirim_pengaduan.php" id="footer-pengaduan-link">Pengaduan Penyewa</a></li>
+          <li><a class="hover:text-primary transition-colors" href="dashboard_pemilik_kos.php" id="footer-manajemen-link">Manajemen Properti</a></li>
+          <li><a class="hover:text-primary transition-colors" href="login_daftar.php" id="footer-bantuan-link">Bantuan</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="mb-6 text-label-md font-bold text-on-surface">Hubungi Kami</h4>
+        <p class="mb-4 text-body-md text-on-surface-variant">Jl. Sudirman No. 123, Jakarta Pusat<br/>DKI Jakarta, 10210</p>
+        <p class="text-body-md text-on-surface-variant">Email: info@kelolakos.com<br/>Phone: +62 21 555 0123</p>
+      </div>
+    </div>
+    <div class="mx-auto mt-12 flex max-w-[1440px] flex-col items-center justify-between gap-4 border-t border-outline-variant/30 pt-8 text-label-sm text-on-surface-variant/70 md:flex-row">
+      <p>&#169; 2024 KelolaKos. Seluruh hak cipta dilindungi.</p>
+      <div class="flex gap-6">
+        <a class="hover:text-primary transition-colors" href="login_daftar.php" id="footer-privacy-link">Kebijakan Privasi</a>
+        <a class="hover:text-primary transition-colors" href="login_daftar.php" id="footer-tos-link">Syarat &amp; Ketentuan</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" role="dialog" aria-modal="true" onclick="closeLightbox()">
+    <button id="lightbox-close" onclick="closeLightbox()" type="button" aria-label="Tutup">
+      <span class="material-symbols-outlined text-[22px]">close</span>
+    </button>
+    <img id="lightbox-img" src="" alt="Foto kamar fullscreen"/>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- SCRIPT -->
+  <script>
+    var MONTHLY_PRICE = 2200000;
+    var YEARLY_PRICE  = 1800000;
+    var currentMode = 'monthly';
+    var currentMainSrc = document.getElementById('main-gallery-img').src;
+    var TOTAL_PHOTOS = 5;
+
+    // Auth simulation. Set to true to demo logged-in booking flow.
+    var isLoggedIn = false;
+
+    /* --- GALLERY --- */
+    function switchGallery(btn) {
+      var src = btn.dataset.src;
+      var idx = parseInt(btn.dataset.index, 10);
+      var mainImg = document.getElementById('main-gallery-img');
+      mainImg.classList.add('fading');
+      setTimeout(function() {
+        mainImg.src = src;
+        mainImg.alt = (btn.dataset.label || '') + ' – Kamar Executive A1';
+        mainImg.classList.remove('fading');
+      }, 200);
+      document.querySelectorAll('.thumb-btn').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentMainSrc = src;
+      document.getElementById('photo-count-text').textContent = idx + ' / ' + TOTAL_PHOTOS;
+    }
+
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    /* --- PRICE TOGGLE --- */
+    function fmtRupiah(val) {
+      if (val >= 1000000) {
+        var jt = val / 1000000;
+        return 'Rp ' + (Number.isInteger(jt) ? jt : jt.toFixed(1)) + ' jt';
+      }
+      return 'Rp ' + val.toLocaleString('id-ID');
+    }
+
+    function setPriceMode(mode) {
+      currentMode = mode;
+      var isYearly = (mode === 'yearly');
+      document.getElementById('btn-monthly').classList.toggle('active', !isYearly);
+      document.getElementById('btn-yearly').classList.toggle('active', isYearly);
+      var price = isYearly ? YEARLY_PRICE : MONTHLY_PRICE;
+      document.getElementById('price-value').textContent = fmtRupiah(price);
+      document.getElementById('price-label').textContent = isYearly ? 'Harga Per Bulan (Paket Tahunan)' : 'Harga Per Bulan';
+      document.getElementById('price-unit').textContent = isYearly ? '/bulan x 12' : '/bulan';
+      var savingsEl = document.getElementById('price-savings');
+      if (isYearly) { savingsEl.classList.remove('hidden'); } else { savingsEl.classList.add('hidden'); }
+      updateTotal();
+    }
+
+    function updateTotal() {
+      var duration = parseInt(document.getElementById('duration-select').value, 10);
+      var totalEl = document.getElementById('total-price');
+      var selEl = document.getElementById('duration-select');
+      if (currentMode === 'yearly') {
+        selEl.value = '12';
+        selEl.disabled = true;
+        totalEl.textContent = 'Rp ' + (YEARLY_PRICE * 12).toLocaleString('id-ID');
+      } else {
+        selEl.disabled = false;
+        totalEl.textContent = 'Rp ' + (MONTHLY_PRICE * duration).toLocaleString('id-ID');
+      }
+    }
+
+    /* --- BOOKING --- */
+    function handleBooking() {
+      var dateInput = document.getElementById('move-in-date');
+      if (!dateInput.value) {
+        showToast('Pilih tanggal mulai sewa terlebih dahulu', 'event_busy');
+        dateInput.focus();
+        return;
+      }
+      if (isLoggedIn) {
+        document.getElementById('booking-start-date').value = dateInput.value;
+        document.getElementById('booking-duration').value = document.getElementById('duration-select').value;
+        document.getElementById('booking-form').submit();
+      } else {
+        showToast('Silakan masuk atau daftar terlebih dahulu', 'login');
+        setTimeout(function() {
+          window.location.href = 'login_daftar.php?redirect=detail_kos.html';
+        }, 900);
+      }
+    }
+
+    document.getElementById('booking-btn')?.addEventListener('click', function(event) {
+      event.preventDefault();
+      handleBooking();
+    });
+
+    /* --- TOAST --- */
+    function showToast(msg, icon) {
+      var toast = document.getElementById('toast');
+      var iconHtml = icon
+        ? '<span class="material-symbols-outlined" style="font-size:16px;font-variation-settings:\'FILL\' 1;">' + icon + '</span>'
+        : '';
+      toast.innerHTML = iconHtml + msg;
+      toast.classList.add('show');
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(function() { toast.classList.remove('show'); }, 3000);
+    }
+
+    /* --- INIT --- */
+    (function init() {
+      var today = new Date();
+      var tomorrow = new Date(today);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      var fmt = function(d) {
+        var dd = String(d.getDate()).padStart(2,'0');
+        var mm = String(d.getMonth()+1).padStart(2,'0');
+        return d.getFullYear() + '-' + mm + '-' + dd;
+      };
+      var dateInput = document.getElementById('move-in-date');
+      dateInput.min = fmt(today);
+      dateInput.value = fmt(tomorrow);
+      updateTotal();
+
+      // Micro-interaction
+      var btn = document.getElementById('booking-btn');
+      btn.addEventListener('mousedown', function() { this.style.transform = 'scale(0.97)'; });
+      btn.addEventListener('mouseup', function() { this.style.transform = ''; });
+      btn.addEventListener('mouseleave', function() { this.style.transform = ''; });
+    })();
+  </script>
+
+</body>
+</html>

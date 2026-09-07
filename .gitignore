@@ -1,0 +1,14 @@
+.idea/
+.vscode/
+Thumbs.db
+.DS_Store
+*.log
+scratch/
+*.txt
+search_*.php
+check_*.php
+find_*.php
+sync_*.php
+update_*.php
+diagnostik_*.php
+get_dir_uri.php

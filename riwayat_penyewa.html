@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="id" class="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KelolaKos - Riwayat Penyewa</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#5341cd',
+            secondary: '#006b55',
+            background: '#f1fbff',
+            surface: '#f1fbff',
+            'surface-container-lowest': '#ffffff',
+            'surface-container': '#e4f0f4',
+            'on-surface': '#131d21',
+            'on-surface-variant': '#474554',
+            'outline-variant': '#c8c4d7',
+            'primary-container': '#6c5ce7',
+            'on-primary': '#ffffff'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface min-h-screen">
+  <nav class="sticky top-0 z-40 border-b border-outline-variant/30 bg-surface/80 backdrop-blur-md">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="cari_kos_logged_in.html" class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl">domain</span>
+        <span class="font-semibold text-primary">KelolaKos</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="dashboard_penyewa.php" class="text-sm font-semibold text-on-surface-variant hover:text-primary">Dashboard</a>
+        <a href="login_daftar.php" class="rounded-full bg-primary px-4 py-2 text-sm font-semibold text-on-primary">Logout</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="mx-auto max-w-6xl px-6 py-10">
+    <div class="mb-8 rounded-2xl border border-outline-variant/30 bg-surface-container-lowest p-6 shadow-sm">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-primary">Riwayat Penyewa</p>
+      <h1 class="mt-2 text-3xl font-bold text-on-surface">Transaksi & pembayaran Anda</h1>
+      <p class="mt-2 text-sm text-on-surface-variant">Halaman ini khusus untuk alur penyewa, terpisah dari halaman verifikasi milik pemilik kos.</p>
+    </div>
+
+    <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
+      <section class="rounded-2xl border border-outline-variant/30 bg-surface-container-lowest p-6 shadow-sm">
+        <div class="flex items-center justify-between">
+          <h2 class="text-xl font-semibold text-on-surface">Daftar Tagihan</h2>
+          <span class="rounded-full bg-secondary/10 px-3 py-1 text-sm font-medium text-secondary">Aktif</span>
+        </div>
+        <div class="mt-6 space-y-4">
+          <div class="rounded-xl border border-outline-variant/30 p-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="font-semibold text-on-surface">Tagihan Oktober 2026</p>
+                <p class="text-sm text-on-surface-variant">Jatuh tempo 05 Okt 2026</p>
+              </div>
+              <span class="rounded-full bg-error/10 px-3 py-1 text-sm font-medium text-error">Belum Bayar</span>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+              <p class="text-lg font-bold text-primary">Rp 2.450.000</p>
+              <a href="#" class="rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-on-primary">Bayar Sekarang</a>
+            </div>
+          </div>
+          <div class="rounded-xl border border-outline-variant/30 p-4">
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="font-semibold text-on-surface">Tagihan September 2026</p>
+                <p class="text-sm text-on-surface-variant">Dibayar pada 05 Sep 2026</p>
+              </div>
+              <span class="rounded-full bg-secondary/10 px-3 py-1 text-sm font-medium text-secondary">Lunas</span>
+            </div>
+            <div class="mt-4 flex items-center justify-between">
+              <p class="text-lg font-bold text-primary">Rp 2.450.000</p>
+              <span class="text-sm font-medium text-on-surface-variant">Berhasil</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rounded-2xl border border-outline-variant/30 bg-surface-container-lowest p-6 shadow-sm">
+        <h2 class="text-xl font-semibold text-on-surface">Informasi Penting</h2>
+        <ul class="mt-4 space-y-3 text-sm text-on-surface-variant">
+          <li>• Pembayaran hanya diproses di halaman khusus penyewa.</li>
+          <li>• Riwayat transaksi tidak akan mengarahkan ke dashboard pemilik.</li>
+          <li>• Jika ada masalah, Anda bisa langsung mengajukan pengaduan dari menu penyewa.</li>
+        </ul>
+        <a href="kirim_pengaduan.php" class="mt-6 inline-flex items-center justify-center rounded-lg border border-primary px-4 py-2 text-sm font-semibold text-primary hover:bg-primary/5">Ajukan Pengaduan</a>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>KelolaKos - Temukan Kost Impianmu</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed-variant": "#4029ba",
+                    "background": "#f1fbff",
+                    "on-background": "#131d21",
+                    "tertiary-fixed-dim": "#ffb4a3",
+                    "surface-container-low": "#eaf5fa",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#5847d2",
+                    "primary-container": "#6c5ce7",
+                    "tertiary-container": "#b95239",
+                    "on-error": "#ffffff",
+                    "secondary": "#006b55",
+                    "on-primary-container": "#faf6ff",
+                    "on-tertiary-fixed": "#3d0700",
+                    "surface-container": "#e4f0f4",
+                    "surface-container-highest": "#d9e4e9",
+                    "on-secondary-fixed-variant": "#005140",
+                    "secondary-fixed": "#6dfad2",
+                    "inverse-surface": "#283236",
+                    "surface-variant": "#d9e4e9",
+                    "on-tertiary": "#ffffff",
+                    "on-surface": "#131d21",
+                    "on-secondary-container": "#00725b",
+                    "secondary-fixed-dim": "#4bddb7",
+                    "outline-variant": "#c8c4d7",
+                    "surface-container-high": "#dfeaef",
+                    "outline": "#787586",
+                    "primary-fixed-dim": "#c6bfff",
+                    "on-primary-fixed": "#160066",
+                    "on-tertiary-fixed-variant": "#812914",
+                    "on-primary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary": "#993a24",
+                    "tertiary-fixed": "#ffdad2",
+                    "secondary-container": "#6dfad2",
+                    "on-surface-variant": "#474554",
+                    "on-error-container": "#93000a",
+                    "surface-bright": "#f1fbff",
+                    "error": "#ba1a1a",
+                    "surface": "#f1fbff",
+                    "primary-fixed": "#e4dfff",
+                    "inverse-primary": "#c6bfff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-tertiary-container": "#fff6f4",
+                    "inverse-on-surface": "#e7f3f7",
+                    "on-secondary-fixed": "#002018",
+                    "primary": "#5341cd",
+                    "surface-dim": "#d1dce0"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "stack-sm": "8px",
+                    "stack-lg": "24px",
+                    "topbar-height": "72px",
+                    "sidebar-width": "260px",
+                    "stack-md": "16px",
+                    "container-padding": "32px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "display-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "headline-sm": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "body-md": ["Inter"],
+                    "label-md": ["Inter"],
+                    "label-sm": ["Inter"]
+            },
+            "fontSize": {
+                    "display-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md-mobile": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "label-md": ["13px", {"lineHeight": "18px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "headline-md": ["24px", {"lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "headline-sm": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                    "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .hero-pattern {
+            background-color: #f1fbff;
+            background-image: radial-gradient(#5341cd 0.5px, transparent 0.5px), radial-gradient(#5341cd 0.5px, #f1fbff 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.1;
+        }
+        .card-shadow {
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        .card-shadow:hover {
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+        }
+        .search-shell {
+            box-shadow: 0 20px 50px rgba(83, 65, 205, 0.08);
+        }
+        .pill {
+            border: 1px solid rgba(83, 65, 205, 0.16);
+            background: rgba(255, 255, 255, 0.8);
+            color: #474554;
+        }
+        .property-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .property-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px -4px rgba(83, 65, 205, 0.12);
+        }
+        .hero-visual {
+            background: linear-gradient(135deg, rgba(83, 65, 205, 0.12), rgba(0, 107, 85, 0.08));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+      scroll-behavior: smooth;
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-md text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar Replacement for Public Landing -->
+<nav class="sticky top-0 z-50 h-[72px] bg-surface/80 backdrop-blur-md flex items-center justify-between px-container-padding border-b border-outline-variant/30">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">domain</span>
+<span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">KelolaKos</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-label-md text-primary font-bold" href="cari_kos_logged_in.html">Cari Kost</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#fasilitas">Fasilitas</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#tentang-kami">Tentang Kami</a>
+</div>
+<!-- Logged In Profile Badge -->
+<div class="flex items-center gap-4">
+  <div class="relative flex items-center gap-3 bg-primary-fixed/30 border border-primary/20 pl-4 pr-1.5 py-1.5 rounded-full hover:bg-primary-fixed/50 transition-all">
+    <div class="flex flex-col text-right">
+      <span class="text-[11px] font-bold text-primary leading-none">Penyewa</span>
+      <span class="text-xs font-semibold text-on-surface leading-normal mt-0.5">Budi Santoso</span>
+    </div>
+    <a href="dashboard_penyewa.php" class="flex h-9 w-9 items-center justify-center rounded-full bg-primary text-on-primary font-bold shadow-md shadow-primary/25 hover:scale-105 active:scale-95 transition-all">
+      BS
+    </a>
+  </div>
+</div>
+</nav>
+<main class="w-full">
+<!-- Hero Section -->
+<section class="relative overflow-hidden px-container-padding py-12 md:py-16">
+  <div class="absolute inset-0 hero-pattern -z-10"></div>
+  <div class="mx-auto grid max-w-[1440px] items-center gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+    <div class="space-y-6">
+      <div class="inline-flex items-center gap-2 rounded-full bg-secondary-container px-4 py-1.5 text-label-md font-label-md text-on-secondary-container">
+        <span class="material-symbols-outlined text-[18px]">verified</span>
+        <span>1.200+ kamar terverifikasi</span>
+      </div>
+      <h1 class="font-display-lg text-display-lg leading-tight text-on-background">
+        Cari kost nyaman, <span class="text-primary">praktis</span>, dan dekat kebutuhanmu.
+      </h1>
+      <p class="max-w-xl text-body-lg text-on-surface-variant">
+        Temukan hunian eksklusif dengan fasilitas lengkap, lokasi strategis, dan proses sewa yang mudah.
+      </p>
+      
+      <!-- Search Panel -->
+      <div class="search-shell rounded-2xl border border-outline-variant/40 bg-surface-container-lowest p-4 transition-all duration-300">
+        <div class="grid gap-3 md:grid-cols-[1.4fr_1fr_auto]">
+          <!-- Lokasi Input -->
+          <div class="flex items-center gap-3 rounded-xl border border-outline-variant/60 bg-surface-container-low px-4 py-2.5 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all duration-300">
+            <span class="material-symbols-outlined text-primary text-[20px]">location_on</span>
+            <div class="flex-1">
+              <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant/60 leading-none mb-1">Lokasi / Area</label>
+              <input id="search-location" class="w-full border-none bg-transparent p-0 text-body-md font-semibold text-on-surface placeholder:text-on-surface-variant/40 focus:ring-0" placeholder="Masukkan lokasi (contoh: Tebet)" type="text" />
+            </div>
+          </div>
+          <!-- Tipe Kos Select -->
+          <div class="flex items-center gap-3 rounded-xl border border-outline-variant/60 bg-surface-container-low px-4 py-2.5 focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/20 transition-all duration-300">
+            <span class="material-symbols-outlined text-primary text-[20px]">home</span>
+            <div class="flex-1">
+              <label class="block text-[10px] font-bold uppercase tracking-wider text-on-surface-variant/60 leading-none mb-1">Tipe Kost</label>
+              <select id="search-gender" class="w-full border-none bg-transparent p-0 text-body-md font-semibold text-on-surface focus:ring-0">
+                <option value="">Semua Tipe</option>
+                <option value="Putra">Putra</option>
+                <option value="Putri">Putri</option>
+                <option value="Campur">Campur</option>
+              </select>
+            </div>
+          </div>
+          <!-- Tombol Cari -->
+          <button onclick="handleSearch()" class="inline-flex items-center justify-center rounded-xl bg-primary px-8 py-3 text-label-md font-label-md font-bold text-on-primary shadow-lg shadow-primary/20 hover:bg-primary-container transition-all hover:scale-[1.02] active:scale-[0.98]">
+            <span class="material-symbols-outlined mr-2">search</span>Cari
+          </button>
+        </div>
+      </div>
+
+      <!-- Kategori Cepat (Quick Categories) -->
+      <div class="space-y-3 pt-2">
+        <div class="flex items-center gap-2 text-on-surface-variant/80">
+          <span class="material-symbols-outlined text-[18px] text-primary">widgets</span>
+          <p class="text-[12px] font-bold uppercase tracking-wider">Kategori Cepat</p>
+        </div>
+        
+        <div class="space-y-2">
+          <!-- Filter Fasilitas -->
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-xs font-semibold text-on-surface-variant/60 mr-1">Fasilitas Utama:</span>
+            <button onclick="toggleAmenityFilter('WiFi', this)" class="quick-filter-btn flex items-center gap-1.5 rounded-full border border-outline-variant/60 bg-surface-container-lowest px-3 py-1 text-xs font-semibold text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200">
+              <span class="material-symbols-outlined text-[15px]">wifi</span>WiFi
+            </button>
+            <button onclick="toggleAmenityFilter('AC', this)" class="quick-filter-btn flex items-center gap-1.5 rounded-full border border-outline-variant/60 bg-surface-container-lowest px-3 py-1 text-xs font-semibold text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200">
+              <span class="material-symbols-outlined text-[15px]">ac_unit</span>AC
+            </button>
+            <button onclick="toggleAmenityFilter('KM Dalam', this)" class="quick-filter-btn flex items-center gap-1.5 rounded-full border border-outline-variant/60 bg-surface-container-lowest px-3 py-1 text-xs font-semibold text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200">
+              <span class="material-symbols-outlined text-[15px]">shower</span>KM Dalam
+            </button>
+            <button onclick="toggleAmenityFilter('Balkon', this)" class="quick-filter-btn flex items-center gap-1.5 rounded-full border border-outline-variant/60 bg-surface-container-lowest px-3 py-1 text-xs font-semibold text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200">
+              <span class="material-symbols-outlined text-[15px]">balcony</span>Balkon
+            </button>
+            <button onclick="toggleAmenityFilter('Smart TV', this)" class="quick-filter-btn flex items-center gap-1.5 rounded-full border border-outline-variant/60 bg-surface-container-lowest px-3 py-1 text-xs font-semibold text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200">
+              <span class="material-symbols-outlined text-[15px]">tv</span>Smart TV
+            </button>
+          </div>
+          
+          <!-- Filter Lokasi Populer -->
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="text-xs font-semibold text-on-surface-variant/60 mr-1">Lokasi Populer:</span>
+            <button onclick="selectLocationFilter('Tebet', this)" class="quick-location-btn flex items-center gap-1.5 rounded-full border border-outline-variant/60 bg-surface-container-lowest px-3 py-1 text-xs font-semibold text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200">
+              <span class="material-symbols-outlined text-[15px]">location_on</span>Tebet
+            </button>
+            <button onclick="selectLocationFilter('Setiabudi', this)" class="quick-location-btn flex items-center gap-1.5 rounded-full border border-outline-variant/60 bg-surface-container-lowest px-3 py-1 text-xs font-semibold text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200">
+              <span class="material-symbols-outlined text-[15px]">location_on</span>Setiabudi
+            </button>
+            <button onclick="selectLocationFilter('Kuningan', this)" class="quick-location-btn flex items-center gap-1.5 rounded-full border border-outline-variant/60 bg-surface-container-lowest px-3 py-1 text-xs font-semibold text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200">
+              <span class="material-symbols-outlined text-[15px]">location_on</span>Kuningan
+            </button>
+            <button onclick="selectLocationFilter('Kemang', this)" class="quick-location-btn flex items-center gap-1.5 rounded-full border border-outline-variant/60 bg-surface-container-lowest px-3 py-1 text-xs font-semibold text-on-surface-variant hover:border-primary hover:text-primary transition-all duration-200">
+              <span class="material-symbols-outlined text-[15px]">location_on</span>Kemang
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Hero Visual -->
+    <div class="hero-visual rounded-[32px] border border-outline-variant/30 p-4 shadow-[0_20px_50px_rgba(83,65,205,0.08)]">
+      <div class="overflow-hidden rounded-[24px]">
+        <img class="h-[340px] w-full object-cover" src="assets/images/cari_kos.png" alt="Kamar kost modern" />
+      </div>
+      <div class="mt-4 grid gap-3 sm:grid-cols-2">
+        <div class="rounded-2xl bg-surface-container-lowest p-4 border border-outline-variant/20">
+          <p class="text-xs font-bold text-primary uppercase tracking-wider">Harga mulai dari</p>
+          <p class="mt-1 text-2xl font-black text-on-surface">Rp 1,5 jt<span class="text-xs font-medium text-on-surface-variant">/bln</span></p>
+        </div>
+        <div class="rounded-2xl bg-surface-container-lowest p-4 border border-outline-variant/20">
+          <p class="text-xs font-bold text-primary uppercase tracking-wider">Fasilitas unggulan</p>
+          <p class="mt-1 text-sm font-semibold text-on-surface-variant">WiFi Cepat, AC, KM Dalam, 24 Jam Security</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Amenities Showcase Section -->
+<section id="fasilitas" class="py-16 px-container-padding bg-surface-container-lowest border-y border-outline-variant/20">
+<div class="max-w-[1440px] mx-auto">
+<div class="text-center max-w-3xl mx-auto mb-12">
+<h2 class="font-headline-md text-headline-md text-on-background font-bold mb-3">Fasilitas Unggulan untuk Kenyamanan Anda</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Semua kebutuhan harian Anda sudah tersedia di dalam satu platform yang sederhana dan terpercaya.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="rounded-2xl border border-outline-variant/30 bg-surface-container-low p-6 text-center card-shadow transition-all duration-300 hover:scale-[1.02]">
+<div class="w-14 h-14 rounded-full bg-primary-container text-primary flex items-center justify-center mx-auto mb-4 shadow-sm shadow-primary/10">
+<span class="material-symbols-outlined text-[28px]">wifi</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-background mb-2">WiFi Gratis</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Internet cepat untuk bekerja, belajar, dan bersantai.</p>
+</div>
+<div class="rounded-2xl border border-outline-variant/30 bg-surface-container-low p-6 text-center card-shadow transition-all duration-300 hover:scale-[1.02]">
+<div class="w-14 h-14 rounded-full bg-secondary-container text-secondary flex items-center justify-center mx-auto mb-4 shadow-sm shadow-secondary/10">
+<span class="material-symbols-outlined text-[28px]">ac_unit</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-background mb-2">AC</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Kamar tetap sejuk dan nyaman sepanjang hari.</p>
+</div>
+<div class="rounded-2xl border border-outline-variant/30 bg-surface-container-low p-6 text-center card-shadow transition-all duration-300 hover:scale-[1.02]">
+<div class="w-14 h-14 rounded-full bg-tertiary-container text-tertiary flex items-center justify-center mx-auto mb-4 shadow-sm shadow-tertiary/10">
+<span class="material-symbols-outlined text-[28px]">shower</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-background mb-2">Kamar Mandi Dalam</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Privasi lebih terjaga dengan fasilitas mandi pribadi.</p>
+</div>
+<div class="rounded-2xl border border-outline-variant/30 bg-surface-container-low p-6 text-center card-shadow transition-all duration-300 hover:scale-[1.02]">
+<div class="w-14 h-14 rounded-full bg-error-container text-error flex items-center justify-center mx-auto mb-4 shadow-sm shadow-error/10">
+<span class="material-symbols-outlined text-[28px]">security</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-background mb-2">Keamanan 24 Jam</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Pengawasan dan akses aman setiap saat.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- About Section -->
+<section id="tentang-kami" class="py-16 px-container-padding bg-surface-container-low/30">
+<div class="max-w-[1440px] mx-auto rounded-3xl border border-outline-variant/30 bg-surface-container-lowest p-8 md:p-12 shadow-sm">
+<div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-background font-bold mb-4">Tentang KelolaKos</h2>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed mb-4">KelolaKos adalah platform digital yang memudahkan Anda mencari kamar kost, mengelola penyewa, dan mengatur transaksi dengan lebih praktis. Kami hadir untuk menghubungkan pemilik kost dan penyewa dalam satu ekosistem yang aman, cepat, dan transparan.</p>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">Dari pencarian kamar hingga pembayaran, semua bisa dilakukan dengan lebih efisien tanpa ribet.</p>
+</div>
+<div class="rounded-2xl bg-primary-container p-8 text-on-primary-container">
+<h3 class="font-headline-sm text-headline-sm font-bold mb-4 flex items-center gap-2">
+  <span class="material-symbols-outlined">verified_user</span>Kenapa KelolaKos?
+</h3>
+<ul class="space-y-3 text-body-md">
+<li class="flex items-start gap-2"><span class="text-primary font-bold">•</span> Proses pencarian kamar yang cepat dan terverifikasi</li>
+<li class="flex items-start gap-2"><span class="text-primary font-bold">•</span> Fasilitas lengkap dan foto kamar sesuai kenyataan</li>
+<li class="flex items-start gap-2"><span class="text-primary font-bold">•</span> Dashboard praktis untuk penyewa melakukan pembayaran sewa</li>
+<li class="flex items-start gap-2"><span class="text-primary font-bold">•</span> Dukungan pengaduan digital langsung ke pemilik kost</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Room Listing Section -->
+<section class="bg-surface-container-low/50 px-container-padding py-16">
+  <div class="mx-auto max-w-[1440px]">
+    <div class="mb-8 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+      <div>
+        <p class="text-label-md font-label-md uppercase tracking-[0.2em] text-primary">Pilihan terbaik</p>
+        <h2 class="mt-2 font-headline-md text-headline-md font-bold text-on-background">Kamar Kost Tersedia</h2>
+        <p class="mt-2 text-body-md text-on-surface-variant">Temukan pilihan kost premium di lokasi-lokasi strategis.</p>
+      </div>
+      <div class="flex flex-wrap gap-3">
+        <button onclick="resetFilters()" class="inline-flex items-center gap-2 rounded-full border border-outline-variant bg-surface-container-lowest px-4 py-2 text-label-md font-label-md text-on-surface-variant hover:text-primary transition-all"> 
+          <span class="material-symbols-outlined text-[18px]">filter_alt_off</span> Bersihkan Filter
+        </button>
+      </div>
+    </div>
+    
+    <!-- GRID KOS CARDS -->
+    <div id="room-grid" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      
+      <!-- Card 1 -->
+      <div class="property-card group flex flex-col overflow-hidden rounded-[20px] border border-outline-variant/30 bg-surface-container-lowest"
+           data-location="Tebet" 
+           data-gender="Putra" 
+           data-amenities="WiFi, AC, KM Dalam"
+           data-price="2200000">
+        <!-- Image Container -->
+        <div class="relative h-48 overflow-hidden">
+          <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdFUQGy5O8wafsrNaqbPKcAXngRR8ERkhSx146sD6jRqJJ_yZ857CVKy-CqR29hU6tg6S_HNEtro6F_nb90mrp_T91UEwuoJGKeui1FOC9LE46JCB8synuoOhCzxzGRnOS8Q6WXOlbGnUecZQ00IB8mNp4UbOSUYqUCNmOrbaWiLyOcan1ySWVFEqtTEt-OBokzCPetcuQfKSlE6QsrYlGS1qSYSf8P8G_-WudhFym8icJuoLORLX37AaQdS4nmk_rM3vmUeGuogCz" alt="Kamar Executive A1" />
+          <div class="absolute left-3 top-3 flex flex-col gap-1.5">
+            <span class="rounded-full bg-secondary px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-on-secondary shadow-md leading-none">Tersedia</span>
+          </div>
+          <button onclick="toggleFavorite(this, event)" class="absolute right-3 top-3 rounded-full bg-white/90 hover:bg-white p-2 text-on-surface-variant hover:text-red-500 hover:scale-110 shadow-md backdrop-blur-sm transition-all" type="button">
+            <span class="material-symbols-outlined text-[20px] transition-colors leading-none">favorite_border</span>
+          </button>
+        </div>
+        <!-- Card Body -->
+        <div class="flex flex-1 flex-col p-5">
+          <div class="flex items-start justify-between gap-3">
+            <div class="space-y-1">
+              <span class="inline-block rounded bg-primary/10 px-2.5 py-0.5 text-[11px] font-bold text-primary">Putra</span>
+              <h3 class="font-headline-sm text-headline-sm font-bold text-on-background line-clamp-1 group-hover:text-primary transition-colors">Kamar Executive A1</h3>
+              <p class="flex items-center gap-1 text-body-md text-on-surface-variant">
+                <span class="material-symbols-outlined text-[16px] text-primary">location_on</span> Tebet, Jakarta Selatan
+              </p>
+            </div>
+          </div>
+          <!-- Amenities -->
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1 rounded-full bg-surface-container px-2.5 py-1 text-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-[14px]">wifi</span>WiFi
+            </span>
+            <span class="inline-flex items-center gap-1 rounded-full bg-surface-container px-2.5 py-1 text-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-[14px]">ac_unit</span>AC
+            </span>
+            <span class="inline-flex items-center gap-1 rounded-full bg-surface-container px-2.5 py-1 text-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-[14px]">shower</span>KM Dalam
+            </span>
+          </div>
+          <!-- Price and Action -->
+          <div class="mt-auto border-t border-outline-variant/30 pt-4 flex items-center justify-between gap-2">
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant/60">Mulai dari</p>
+              <p class="text-headline-sm font-extrabold text-primary">Rp 2,2 jt<span class="text-xs font-normal text-on-surface-variant">/bln</span></p>
+            </div>
+            <a class="rounded-xl bg-primary px-4 py-2.5 text-label-md font-label-md font-bold text-on-primary hover:bg-primary-container transition-all shadow-md shadow-primary/15 hover:shadow-primary/25 active:scale-95" href="detail_kos.html">Lihat Detail</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 2 -->
+      <div class="property-card group flex flex-col overflow-hidden rounded-[20px] border border-outline-variant/30 bg-surface-container-lowest"
+           data-location="Setiabudi" 
+           data-gender="Putri" 
+           data-amenities="WiFi, AC"
+           data-price="1850000">
+        <!-- Image Container -->
+        <div class="relative h-48 overflow-hidden">
+          <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7C4IsvgXAAUJSimUWv0hQxYrdo9r0YFWLijPjDfwHv4L3L1kXkdeHPhc_Z9SfzYsVDhu9sVNInJu2aIe5ebZTVPmO60VemQsGfYMPg_STVhEEKtbtJPOlJ66SaB9_074NP7A5AJRgUbv6jPW7yxchdbmQ2F6DVXhURqe-y7qCLI6erWeYvTbiuzzAiYnMaPMWqiWFIjdDrrI2ZGIMrMC43oTDPDUY5kSOfb2KIDdw8-ZnLGNeScc9kn4Hf2prxGlJfm98-valiJ9B" alt="Kamar Standard B3" />
+          <div class="absolute left-3 top-3 flex flex-col gap-1.5">
+            <span class="rounded-full bg-secondary px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-on-secondary shadow-md leading-none">Tersedia</span>
+          </div>
+          <button onclick="toggleFavorite(this, event)" class="absolute right-3 top-3 rounded-full bg-white/90 hover:bg-white p-2 text-on-surface-variant hover:text-red-500 hover:scale-110 shadow-md backdrop-blur-sm transition-all" type="button">
+            <span class="material-symbols-outlined text-[20px] transition-colors leading-none">favorite_border</span>
+          </button>
+        </div>
+        <!-- Card Body -->
+        <div class="flex flex-1 flex-col p-5">
+          <div class="flex items-start justify-between gap-3">
+            <div class="space-y-1">
+              <span class="inline-block rounded bg-secondary-container px-2.5 py-0.5 text-[11px] font-bold text-on-secondary-container">Putri</span>
+              <h3 class="font-headline-sm text-headline-sm font-bold text-on-background line-clamp-1 group-hover:text-primary transition-colors">Kamar Standard B3</h3>
+              <p class="flex items-center gap-1 text-body-md text-on-surface-variant">
+                <span class="material-symbols-outlined text-[16px] text-primary">location_on</span> Setiabudi, Jakarta Selatan
+              </p>
+            </div>
+          </div>
+          <!-- Amenities -->
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1 rounded-full bg-surface-container px-2.5 py-1 text-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-[14px]">wifi</span>WiFi
+            </span>
+            <span class="inline-flex items-center gap-1 rounded-full bg-surface-container px-2.5 py-1 text-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-[14px]">ac_unit</span>AC
+            </span>
+          </div>
+          <!-- Price and Action -->
+          <div class="mt-auto border-t border-outline-variant/30 pt-4 flex items-center justify-between gap-2">
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant/60">Mulai dari</p>
+              <p class="text-headline-sm font-extrabold text-primary">Rp 1,85 jt<span class="text-xs font-normal text-on-surface-variant">/bln</span></p>
+            </div>
+            <a class="rounded-xl bg-primary px-4 py-2.5 text-label-md font-label-md font-bold text-on-primary hover:bg-primary-container transition-all shadow-md shadow-primary/15 hover:shadow-primary/25 active:scale-95" href="detail_kos.html">Lihat Detail</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 3 -->
+      <div class="property-card group flex flex-col overflow-hidden rounded-[20px] border border-outline-variant/30 bg-surface-container-lowest"
+           data-location="Kuningan" 
+           data-gender="Campur" 
+           data-amenities="Balkon, AC, KM Dalam"
+           data-price="3500000">
+        <!-- Image Container -->
+        <div class="relative h-48 overflow-hidden">
+          <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuxbTBz2YnxENVpzIHuGC1kC4LsqOFx3NddDShf3Q-09R3Z7BJjrd3hv4CUJvNpxOzTavnXQY2XRRAROVs1_63CZdJQXILoK98-iH3q9OspOfzZjKWGSZ7pIpmlGi_B_9gZxBrt0DkzoxgpNRD8c0y9zwgwX2YLCdwk1W67hRCPcoIbFz6-Qnuu-M8i-7QuPaK0XTTZtPMZLnWisaF9r3jlzkD8kAvGS3pLAofjMZcrkL6ekQaSB2TV_o6-iziOh50STtar7ad3KVt" alt="Suite Room Premium" />
+          <div class="absolute left-3 top-3 flex flex-col gap-1.5">
+            <span class="rounded-full bg-secondary px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-on-secondary shadow-md leading-none">Tersedia</span>
+          </div>
+          <button onclick="toggleFavorite(this, event)" class="absolute right-3 top-3 rounded-full bg-white/90 hover:bg-white p-2 text-on-surface-variant hover:text-red-500 hover:scale-110 shadow-md backdrop-blur-sm transition-all" type="button">
+            <span class="material-symbols-outlined text-[20px] transition-colors leading-none">favorite_border</span>
+          </button>
+        </div>
+        <!-- Card Body -->
+        <div class="flex flex-1 flex-col p-5">
+          <div class="flex items-start justify-between gap-3">
+            <div class="space-y-1">
+              <span class="inline-block rounded bg-tertiary-container px-2.5 py-0.5 text-[11px] font-bold text-on-tertiary-container">Campur</span>
+              <h3 class="font-headline-sm text-headline-sm font-bold text-on-background line-clamp-1 group-hover:text-primary transition-colors">Suite Room Premium</h3>
+              <p class="flex items-center gap-1 text-body-md text-on-surface-variant">
+                <span class="material-symbols-outlined text-[16px] text-primary">location_on</span> Kuningan, Jakarta Selatan
+              </p>
+            </div>
+          </div>
+          <!-- Amenities -->
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1 rounded-full bg-surface-container px-2.5 py-1 text-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-[14px]">balcony</span>Balkon
+            </span>
+            <span class="inline-flex items-center gap-1 rounded-full bg-surface-container px-2.5 py-1 text-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-[14px]">ac_unit</span>AC
+            </span>
+            <span class="inline-flex items-center gap-1 rounded-full bg-surface-container px-2.5 py-1 text-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-[14px]">shower</span>KM Dalam
+            </span>
+          </div>
+          <!-- Price and Action -->
+          <div class="mt-auto border-t border-outline-variant/30 pt-4 flex items-center justify-between gap-2">
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant/60">Mulai dari</p>
+              <p class="text-headline-sm font-extrabold text-primary">Rp 3,5 jt<span class="text-xs font-normal text-on-surface-variant">/bln</span></p>
+            </div>
+            <a class="rounded-xl bg-primary px-4 py-2.5 text-label-md font-label-md font-bold text-on-primary hover:bg-primary-container transition-all shadow-md shadow-primary/15 hover:shadow-primary/25 active:scale-95" href="detail_kos.html">Lihat Detail</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Card 4 -->
+      <div class="property-card group flex flex-col overflow-hidden rounded-[20px] border border-outline-variant/30 bg-surface-container-lowest"
+           data-location="Kemang" 
+           data-gender="Putra" 
+           data-amenities="WiFi, Smart TV"
+           data-price="2750000">
+        <!-- Image Container -->
+        <div class="relative h-48 overflow-hidden">
+          <img class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPKLqIRCcLIQ8-ewRkUya_sHCCh-xJLJ0WQozgL9Vw7s0uTU2pnScfLng47IhbR4NRfL0Sdxe670TCpG5diK_beJ2qAS7KXmkf2AADVdl46JlhY_fsnpMqMuXJ--Vm8WwPl5xQLD362_N521iiVQYQOs5FUzatZrMJyHa51JTLS2HHxUy932auPu4TtXmiD8bOn2d7XFtEg_V8zHSGjOG6UZ35eAV6OiCJJSDhQkJCdmWUKYpA8Zr5Cga44KTajECwAplvBIMvQy6A" alt="Kamar D-04" />
+          <div class="absolute left-3 top-3 flex flex-col gap-1.5">
+            <span class="rounded-full bg-secondary px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-on-secondary shadow-md leading-none">Tersedia</span>
+          </div>
+          <button onclick="toggleFavorite(this, event)" class="absolute right-3 top-3 rounded-full bg-white/90 hover:bg-white p-2 text-on-surface-variant hover:text-red-500 hover:scale-110 shadow-md backdrop-blur-sm transition-all" type="button">
+            <span class="material-symbols-outlined text-[20px] transition-colors leading-none">favorite_border</span>
+          </button>
+        </div>
+        <!-- Card Body -->
+        <div class="flex flex-1 flex-col p-5">
+          <div class="flex items-start justify-between gap-3">
+            <div class="space-y-1">
+              <span class="inline-block rounded bg-primary/10 px-2.5 py-0.5 text-[11px] font-bold text-primary">Putra</span>
+              <h3 class="font-headline-sm text-headline-sm font-bold text-on-background line-clamp-1 group-hover:text-primary transition-colors">Kamar D-04</h3>
+              <p class="flex items-center gap-1 text-body-md text-on-surface-variant">
+                <span class="material-symbols-outlined text-[16px] text-primary">location_on</span> Kemang, Jakarta Selatan
+              </p>
+            </div>
+          </div>
+          <!-- Amenities -->
+          <div class="mt-4 flex flex-wrap gap-1.5">
+            <span class="inline-flex items-center gap-1 rounded-full bg-surface-container px-2.5 py-1 text-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-[14px]">wifi</span>WiFi
+            </span>
+            <span class="inline-flex items-center gap-1 rounded-full bg-surface-container px-2.5 py-1 text-xs text-on-surface-variant">
+              <span class="material-symbols-outlined text-[14px]">tv</span>Smart TV
+            </span>
+          </div>
+          <!-- Price and Action -->
+          <div class="mt-auto border-t border-outline-variant/30 pt-4 flex items-center justify-between gap-2">
+            <div>
+              <p class="text-[10px] font-bold uppercase tracking-wider text-on-surface-variant/60">Mulai dari</p>
+              <p class="text-headline-sm font-extrabold text-primary">Rp 2,75 jt<span class="text-xs font-normal text-on-surface-variant">/bln</span></p>
+            </div>
+            <a class="rounded-xl bg-primary px-4 py-2.5 text-label-md font-label-md font-bold text-on-primary hover:bg-primary-container transition-all shadow-md shadow-primary/15 hover:shadow-primary/25 active:scale-95" href="detail_kos.html">Lihat Detail</a>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+
+    <!-- No Results Placeholder -->
+    <div id="no-results" class="hidden flex-col items-center justify-center py-16 text-center bg-surface-container-lowest rounded-3xl border border-outline-variant/20 shadow-sm mt-6">
+      <span class="material-symbols-outlined text-primary text-6xl mb-3">search_off</span>
+      <h3 class="text-headline-sm font-bold text-on-background">Kost Tidak Ditemukan</h3>
+      <p class="text-body-md text-on-surface-variant mt-1 max-w-md">Maaf, kami tidak dapat menemukan kost yang cocok dengan filter aktif Anda. Coba bersihkan filter atau ganti kata kunci pencarian.</p>
+      <button onclick="resetFilters()" class="mt-5 inline-flex items-center justify-center rounded-xl bg-primary px-6 py-2.5 text-label-md font-label-md font-bold text-on-primary hover:bg-primary-container transition-all">
+        Reset Semua Filter
+      </button>
+    </div>
+
+    <!-- Load More Button -->
+    <div class="mt-10 flex justify-center">
+      <a class="inline-flex items-center justify-center rounded-full border-2 border-primary px-8 py-3 text-label-md font-label-md font-bold text-primary transition-all hover:bg-primary-fixed" href="dashboard_penyewa.php">Lihat Semua Kamar (48)</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 px-container-padding bg-on-background relative overflow-hidden">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary opacity-20 blur-3xl -mr-32 -mt-32"></div>
+<div class="absolute bottom-0 left-0 w-64 h-64 bg-secondary opacity-20 blur-3xl -ml-32 -mb-32"></div>
+<div class="max-w-4xl mx-auto text-center relative z-10">
+<h2 class="font-display-lg text-display-lg text-background mb-4">Punya Properti Kost Kosong?</h2>
+<p class="font-body-lg text-body-lg text-surface-variant/80 mb-8">
+                    Bergabunglah dengan ribuan pemilik kost lainnya. Kelola properti, penyewa, dan transaksi keuangan Anda dalam satu dashboard profesional yang mudah digunakan.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a class="inline-flex items-center justify-center px-8 py-3.5 bg-primary text-on-primary rounded-xl font-label-md text-label-md font-bold shadow-xl shadow-primary/30 hover:scale-105 transition-transform" href="dashboard_pemilik_kos.php">
+                        Daftarkan Kost Saya
+                    </a>
+      <a class="inline-flex items-center justify-center px-8 py-3.5 bg-surface-container-highest/10 text-background border border-surface-variant/30 rounded-xl font-label-md text-label-md font-bold hover:bg-surface-container-highest/20 transition-all" href="login_daftar.php">
+                        Konsultasi Gratis
+                    </a>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer id="footer" class="border-t border-outline-variant/30 bg-surface px-container-padding py-16">
+  <div class="mx-auto grid max-w-[1440px] gap-10 md:grid-cols-2 lg:grid-cols-4">
+    <div class="space-y-6">
+      <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">domain</span>
+        <span class="font-headline-md text-headline-md font-bold text-primary tracking-tight">KelolaKos</span>
+      </div>
+      <p class="text-body-md text-on-surface-variant leading-relaxed">Platform pencarian dan pengelolaan kost yang modern, cepat, dan terpercaya untuk penyewa dan pemilik.</p>
+      <div class="flex gap-4">
+        <a class="flex h-10 w-10 items-center justify-center rounded-full bg-surface-container text-on-surface-variant transition-all hover:bg-primary hover:text-on-primary" href="https://www.google.com" target="_blank" rel="noopener noreferrer"><span class="material-symbols-outlined">public</span></a>
+        <a class="flex h-10 w-10 items-center justify-center rounded-full bg-surface-container text-on-surface-variant transition-all hover:bg-primary hover:text-on-primary" href="mailto:info@kelolakos.com"><span class="material-symbols-outlined">alternate_email</span></a>
+      </div>
+    </div>
+    <div>
+      <h4 class="mb-6 text-label-md font-label-md font-bold text-on-surface">Navigasi</h4>
+      <ul class="space-y-4 text-body-md text-on-surface-variant">
+        <li><a class="transition-colors hover:text-primary" href="cari_kos_logged_in.html">Cari Kost</a></li>
+        <li><a class="transition-colors hover:text-primary" href="dashboard_penyewa.php">Dashboard Saya</a></li>
+        <li><a class="transition-colors hover:text-primary" href="dashboard_pemilik_kos.php">Dashboard Pemilik</a></li>
+        <li><a class="transition-colors hover:text-primary font-semibold text-error hover:text-error/80" href="cari_kos.html">Logout</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="mb-6 text-label-md font-label-md font-bold text-on-surface">Layanan</h4>
+      <ul class="space-y-4 text-body-md text-on-surface-variant">
+        <li><a class="transition-colors hover:text-primary" href="riwayat_penyewa.html">Riwayat Pembayaran</a></li>
+        <li><a class="transition-colors hover:text-primary" href="kirim_pengaduan.php">Pengaduan</a></li>
+        <li><a class="transition-colors hover:text-primary" href="dashboard_pemilik_kos.php">Manajemen Properti</a></li>
+        <li><a class="transition-colors hover:text-primary" href="login_daftar.php">Bantuan</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="mb-6 text-label-md font-label-md font-bold text-on-surface">Hubungi Kami</h4>
+      <p class="mb-4 text-body-md text-on-surface-variant">Jl. Sudirman No. 123, Jakarta Pusat<br />DKI Jakarta, 10210</p>
+      <p class="text-body-md text-on-surface-variant">Email: info@kelolakos.com<br />Phone: +62 21 555 0123</p>
+    </div>
+  </div>
+  <div class="mx-auto mt-12 flex max-w-[1440px] flex-col items-center justify-between gap-4 border-t border-outline-variant/30 pt-8 text-label-sm font-label-sm text-on-surface-variant/70 md:flex-row">
+    <p>© 2024 KelolaKos. Seluruh hak cipta dilindungi.</p>
+    <div class="flex gap-6">
+      <a class="transition-colors hover:text-primary" href="login_daftar.php">Kebijakan Privasi</a>
+      <a class="transition-colors hover:text-primary" href="login_daftar.php">Syarat &amp; Ketentuan</a>
+    </div>
+  </div>
+</footer>
+</main>
+<script>
+        // Simple Micro-interaction: Scale on click
+        document.querySelectorAll('button, a').forEach(el => {
+            el.addEventListener('mousedown', () => {
+                el.classList.add('scale-[0.98]');
+            });
+            el.addEventListener('mouseup', () => {
+                el.classList.remove('scale-[0.98]');
+            });
+            el.addEventListener('mouseleave', () => {
+                el.classList.remove('scale-[0.98]');
+            });
+        });
+
+        // Search Focus interaction
+        const searchInput = document.querySelector('#search-location');
+        const searchContainer = searchInput?.closest('div');
+        if (searchInput && searchContainer) {
+            searchInput.addEventListener('focus', () => {
+                searchContainer.classList.add('border-primary', 'shadow-primary/10');
+            });
+            searchInput.addEventListener('blur', () => {
+                searchContainer.classList.remove('border-primary', 'shadow-primary/10');
+            });
+        }
+
+        // --- FILTER LOGIC ---
+        let selectedLocation = "";
+        let selectedGender = "";
+        let selectedAmenities = new Set();
+
+        function toggleAmenityFilter(amenity, button) {
+            if (selectedAmenities.has(amenity)) {
+                selectedAmenities.delete(amenity);
+                button.classList.remove('border-primary', 'bg-primary-fixed', 'text-primary');
+                button.classList.add('border-outline-variant/60', 'bg-surface-container-lowest', 'text-on-surface-variant');
+            } else {
+                selectedAmenities.add(amenity);
+                button.classList.add('border-primary', 'bg-primary-fixed', 'text-primary');
+                button.classList.remove('border-outline-variant/60', 'bg-surface-container-lowest', 'text-on-surface-variant');
+            }
+            applyFilters();
+        }
+
+        function selectLocationFilter(location, button) {
+            const buttons = document.querySelectorAll('.quick-location-btn');
+            if (selectedLocation === location) {
+                selectedLocation = "";
+                button.classList.remove('border-primary', 'bg-primary-fixed', 'text-primary');
+                button.classList.add('border-outline-variant/60', 'bg-surface-container-lowest', 'text-on-surface-variant');
+            } else {
+                selectedLocation = location;
+                buttons.forEach(btn => {
+                    btn.classList.remove('border-primary', 'bg-primary-fixed', 'text-primary');
+                    btn.classList.add('border-outline-variant/60', 'bg-surface-container-lowest', 'text-on-surface-variant');
+                });
+                button.classList.add('border-primary', 'bg-primary-fixed', 'text-primary');
+                button.classList.remove('border-outline-variant/60', 'bg-surface-container-lowest', 'text-on-surface-variant');
+            }
+            document.getElementById('search-location').value = selectedLocation;
+            applyFilters();
+        }
+
+        function handleSearch() {
+            selectedLocation = document.getElementById('search-location').value.trim();
+            selectedGender = document.getElementById('search-gender').value;
+            
+            // Highlight quick location button if matches
+            const buttons = document.querySelectorAll('.quick-location-btn');
+            buttons.forEach(btn => {
+                const text = btn.querySelector('span:not(.material-symbols-outlined)').innerText;
+                if (selectedLocation.toLowerCase() === text.toLowerCase()) {
+                    btn.classList.add('border-primary', 'bg-primary-fixed', 'text-primary');
+                    btn.classList.remove('border-outline-variant/60', 'bg-surface-container-lowest', 'text-on-surface-variant');
+                } else {
+                    btn.classList.remove('border-primary', 'bg-primary-fixed', 'text-primary');
+                    btn.classList.add('border-outline-variant/60', 'bg-surface-container-lowest', 'text-on-surface-variant');
+                }
+            });
+            
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const cards = document.querySelectorAll('.property-card');
+            let visibleCount = 0;
+            
+            cards.forEach(card => {
+                const loc = card.getAttribute('data-location').toLowerCase();
+                const gen = card.getAttribute('data-gender');
+                const ams = card.getAttribute('data-amenities').split(', ');
+                
+                const matchesLoc = !selectedLocation || loc.includes(selectedLocation.toLowerCase());
+                const matchesGen = !selectedGender || gen === selectedGender;
+                
+                let matchesAms = true;
+                selectedAmenities.forEach(am => {
+                    if (!ams.includes(am)) {
+                        matchesAms = false;
+                    }
+                });
+                
+                if (matchesLoc && matchesGen && matchesAms) {
+                    card.style.display = 'flex';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            const grid = document.getElementById('room-grid');
+            const noResults = document.getElementById('no-results');
+            
+            if (visibleCount === 0) {
+                grid.classList.add('hidden');
+                noResults.classList.remove('hidden');
+                noResults.classList.add('flex');
+            } else {
+                grid.classList.remove('hidden');
+                noResults.classList.add('hidden');
+                noResults.classList.remove('flex');
+            }
+        }
+
+        function resetFilters() {
+            selectedLocation = "";
+            selectedGender = "";
+            selectedAmenities.clear();
+            
+            document.getElementById('search-location').value = "";
+            document.getElementById('search-gender').value = "";
+            
+            document.querySelectorAll('.quick-filter-btn, .quick-location-btn').forEach(btn => {
+                btn.classList.remove('border-primary', 'bg-primary-fixed', 'text-primary');
+                btn.classList.add('border-outline-variant/60', 'bg-surface-container-lowest', 'text-on-surface-variant');
+            });
+            
+            applyFilters();
+        }
+
+        function toggleFavorite(button, event) {
+            event.stopPropagation();
+            const icon = button.querySelector('.material-symbols-outlined');
+            if (icon.innerText === 'favorite_border') {
+                icon.innerText = 'favorite';
+                icon.style.fontVariationSettings = "'FILL' 1";
+                button.classList.add('text-red-500');
+                button.classList.remove('text-on-surface-variant');
+            } else {
+                icon.innerText = 'favorite_border';
+                icon.style.fontVariationSettings = "'FILL' 0";
+                button.classList.remove('text-red-500');
+                button.classList.add('text-on-surface-variant');
+            }
+        }
+    </script>
+</body></html>

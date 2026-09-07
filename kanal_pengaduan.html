@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kanal Pengaduan - KelolaKos</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f1fbff;
+        }
+        .complaint-card:hover {
+            box-shadow: 0px 8px 24px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+        .status-baru { background-color: rgba(83, 65, 205, 0.1); color: #5341cd; }
+        .status-diproses { background-color: rgba(185, 82, 57, 0.1); color: #993a24; }
+        .status-selesai { background-color: rgba(0, 107, 85, 0.1); color: #006b55; }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-primary-fixed-variant": "#4029ba",
+                "background": "#f1fbff",
+                "on-background": "#131d21",
+                "tertiary-fixed-dim": "#ffb4a3",
+                "surface-container-low": "#eaf5fa",
+                "error-container": "#ffdad6",
+                "surface-tint": "#5847d2",
+                "primary-container": "#6c5ce7",
+                "tertiary-container": "#b95239",
+                "on-error": "#ffffff",
+                "secondary": "#006b55",
+                "on-primary-container": "#faf6ff",
+                "on-tertiary-fixed": "#3d0700",
+                "surface-container": "#e4f0f4",
+                "surface-container-highest": "#d9e4e9",
+                "on-secondary-fixed-variant": "#005140",
+                "secondary-fixed": "#6dfad2",
+                "inverse-surface": "#283236",
+                "surface-variant": "#d9e4e9",
+                "on-tertiary": "#ffffff",
+                "on-surface": "#131d21",
+                "on-secondary-container": "#00725b",
+                "secondary-fixed-dim": "#4bddb7",
+                "outline-variant": "#c8c4d7",
+                "surface-container-high": "#dfeaef",
+                "outline": "#787586",
+                "primary-fixed-dim": "#c6bfff",
+                "on-primary-fixed": "#160066",
+                "on-tertiary-fixed-variant": "#812914",
+                "on-primary": "#ffffff",
+                "on-secondary": "#ffffff",
+                "tertiary": "#993a24",
+                "tertiary-fixed": "#ffdad2",
+                "secondary-container": "#6dfad2",
+                "on-surface-variant": "#474554",
+                "on-error-container": "#93000a",
+                "surface-bright": "#f1fbff",
+                "error": "#ba1a1a",
+                "surface": "#f1fbff",
+                "primary-fixed": "#e4dfff",
+                "inverse-primary": "#c6bfff",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-container": "#fff6f4",
+                "inverse-on-surface": "#e7f3f7",
+                "on-secondary-fixed": "#002018",
+                "primary": "#5341cd",
+                "surface-dim": "#d1dce0"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "stack-sm": "8px",
+                "stack-lg": "24px",
+                "topbar-height": "72px",
+                "sidebar-width": "260px",
+                "stack-md": "16px",
+                "container-padding": "32px",
+                "gutter": "24px"
+            },
+            "fontFamily": {
+                "display-lg": ["Inter"],
+                "headline-md": ["Inter"],
+                "headline-sm": ["Inter"],
+                "label-md": ["Inter"],
+                "body-md": ["Inter"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface">
+<!-- Navigation Drawer (Shared Component) -->
+<aside class="fixed left-0 top-0 h-full w-[260px] bg-surface dark:bg-surface shadow-[0px_4px_12px_rgba(0,0,0,0.05)] border-r border-outline-variant dark:border-outline hidden md:flex flex-col z-50">
+<div class="p-6 flex flex-col gap-1">
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">KelolaKos</h1>
+<p class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Property Management</p>
+</div>
+<nav class="flex-1 px-2 space-y-1">
+<a class="flex items-center gap-3 text-on-surface-variant dark:text-on-surface-variant px-4 py-3 hover:bg-surface-container transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label-md text-label-md">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant dark:text-on-surface-variant px-4 py-3 hover:bg-surface-container transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="font-label-md text-label-md">Properti</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant dark:text-on-surface-variant px-4 py-3 hover:bg-surface-container transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label-md text-label-md">Penyewa</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant dark:text-on-surface-variant px-4 py-3 hover:bg-surface-container transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label-md text-label-md">Transaksi</span>
+</a>
+<a class="flex items-center gap-3 text-primary dark:text-primary-fixed-dim font-bold border-l-4 border-primary dark:border-primary-fixed-dim bg-surface-container-low dark:bg-surface-container-highest px-4 py-3" href="#">
+<span class="material-symbols-outlined" data-icon="assessment">assessment</span>
+<span class="font-label-md text-label-md">Laporan</span>
+</a>
+<a class="flex items-center gap-3 text-on-surface-variant dark:text-on-surface-variant px-4 py-3 hover:bg-surface-container transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="room_service">room_service</span>
+<span class="font-label-md text-label-md">Fasilitas</span>
+</a>
+</nav>
+<div class="mt-auto p-4 border-t border-outline-variant">
+<a class="flex items-center gap-3 text-on-surface-variant dark:text-on-surface-variant px-4 py-3 hover:bg-surface-container transition-all duration-300 rounded-lg" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label-md text-label-md">Pengaturan Akun</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Wrapper -->
+<div class="md:ml-[260px] flex flex-col min-h-screen">
+<!-- TopAppBar (Shared Component) -->
+<header class="sticky top-0 h-[72px] bg-surface/80 dark:bg-surface/80 backdrop-blur-md flex justify-between items-center px-container-padding w-full z-40 shadow-[0px_4px_12px_rgba(0,0,0,0.05)]">
+<div class="flex items-center gap-4">
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+<h2 class="font-headline-sm text-headline-sm text-primary dark:text-primary-fixed-dim">Kanal Pengaduan</h2>
+</div>
+<div class="flex items-center gap-6">
+<div class="hidden md:flex items-center bg-surface-container px-4 py-2 rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-on-surface-variant mr-2" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-64" placeholder="Cari nomor kamar atau isu..." type="text"/>
+</div>
+<div class="flex items-center gap-3">
+<div class="relative">
+<span class="material-symbols-outlined text-on-surface-variant cursor-pointer p-2 hover:bg-surface-container rounded-full" data-icon="notifications">notifications</span>
+<span class="absolute top-1 right-1 w-2 h-2 bg-error rounded-full border-2 border-surface"></span>
+</div>
+<img class="w-10 h-10 rounded-full border-2 border-primary-container object-cover" data-alt="A professional headshot of a female property manager with a warm smile, wearing a professional navy blazer. The background is a clean, modern office interior with soft natural lighting and a hint of green plants, conveying trust and reliability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjRvst7HEOdGPindw5Ga4rrPzsRcBrWhc7c35laQ6bW2sZz8pcwT8BU8YISoKr8Kwd5eSuelOnswdstzoz9JhAzQetqaTG3eu_Vr87NQgGOT3DY8rfftoPdGu3ckY861nQj753hR9572M-cWw7YwyJaTd7ZfM5laMrnIWW1p6IWoD2wncOtFycH0YRJ7e5eX23bHnh4ZwKhyGG0BW7dCp7nm8VwxDDSdpSWYQ339lKc6zCGCz1Czg5XhP0l--3tIZe1ugnJz8NtmMk"/>
+</div>
+</div>
+</header>
+<main class="flex-1 p-container-padding max-w-[1440px] mx-auto w-full">
+<!-- Statistics Row -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter mb-stack-lg">
+<div class="bg-surface p-6 rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.05)] relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-primary opacity-10 rounded-bl-full transition-transform group-hover:scale-110"></div>
+<p class="text-on-surface-variant font-label-md text-label-md mb-2">Total Laporan</p>
+<h3 class="font-headline-md text-headline-md text-primary">48</h3>
+<div class="mt-4 flex items-center text-secondary text-label-sm">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="trending_up">trending_up</span>
+<span>12% dari bulan lalu</span>
+</div>
+</div>
+<div class="bg-surface p-6 rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.05)] relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-error opacity-10 rounded-bl-full transition-transform group-hover:scale-110"></div>
+<p class="text-on-surface-variant font-label-md text-label-md mb-2">Belum Ditangani</p>
+<h3 class="font-headline-md text-headline-md text-error">7</h3>
+<div class="mt-4 flex items-center text-on-surface-variant text-label-sm">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="timer">timer</span>
+<span>Respons rata-rata: 2 jam</span>
+</div>
+</div>
+<div class="bg-surface p-6 rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.05)] relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-tertiary-container opacity-10 rounded-bl-full transition-transform group-hover:scale-110"></div>
+<p class="text-on-surface-variant font-label-md text-label-md mb-2">Sedang Diproses</p>
+<h3 class="font-headline-md text-headline-md text-tertiary">15</h3>
+<div class="mt-4 flex items-center text-on-surface-variant text-label-sm">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="engineering">engineering</span>
+<span>3 teknisi aktif</span>
+</div>
+</div>
+<div class="bg-surface p-6 rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.05)] relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-24 h-24 bg-secondary opacity-10 rounded-bl-full transition-transform group-hover:scale-110"></div>
+<p class="text-on-surface-variant font-label-md text-label-md mb-2">Selesai (Bulan Ini)</p>
+<h3 class="font-headline-md text-headline-md text-secondary">26</h3>
+<div class="mt-4 flex items-center text-secondary text-label-sm">
+<span class="material-symbols-outlined text-sm mr-1" data-icon="check_circle">check_circle</span>
+<span>Kepuasan: 4.8/5.0</span>
+</div>
+</div>
+</div>
+<!-- Complaint Filter & Header -->
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-stack-md gap-4">
+<div class="flex gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
+<button class="bg-primary text-on-primary px-4 py-2 rounded-full text-label-md whitespace-nowrap shadow-sm">Semua Laporan</button>
+<button class="bg-surface text-on-surface-variant border border-outline-variant px-4 py-2 rounded-full text-label-md whitespace-nowrap hover:bg-surface-container transition-colors">Menunggu</button>
+<button class="bg-surface text-on-surface-variant border border-outline-variant px-4 py-2 rounded-full text-label-md whitespace-nowrap hover:bg-surface-container transition-colors">Diproses</button>
+<button class="bg-surface text-on-surface-variant border border-outline-variant px-4 py-2 rounded-full text-label-md whitespace-nowrap hover:bg-surface-container transition-colors">Selesai</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 bg-surface text-on-surface px-4 py-2 rounded-lg border border-outline-variant font-label-md hover:bg-surface-container transition-all">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                        Filter
+                    </button>
+<button class="flex items-center gap-2 bg-primary text-on-primary px-6 py-2 rounded-lg font-label-md hover:opacity-90 transition-all shadow-md">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                        Buat Laporan
+                    </button>
+</div>
+</div>
+<!-- Complaint Bento List -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Main List -->
+<div class="lg:col-span-8 flex flex-col gap-4">
+<!-- Complaint Card 1 -->
+<div class="complaint-card bg-surface p-5 rounded-xl transition-all border border-transparent hover:border-primary-container flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-3xl" data-icon="plumbing">plumbing</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-3 mb-1">
+<span class="font-headline-sm text-headline-sm">Kamar 204</span>
+<span class="status-baru px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Baru</span>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-1 mb-2">Kran air di kamar mandi bocor terus menerus sejak tadi pagi, air menggenang di lantai.</p>
+<div class="flex flex-wrap items-center gap-4 text-on-surface-variant text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span> 12 Okt 2023</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="person">person</span> Andi Wijaya</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="priority_high">priority_high</span> Tinggi</span>
+</div>
+</div>
+<div class="flex gap-2 self-end sm:self-center">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+</div>
+</div>
+<!-- Complaint Card 2 -->
+<div class="complaint-card bg-surface p-5 rounded-xl transition-all border border-transparent hover:border-primary-container flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-tertiary shrink-0">
+<span class="material-symbols-outlined text-3xl" data-icon="ac_unit">ac_unit</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-3 mb-1">
+<span class="font-headline-sm text-headline-sm">Kamar 108</span>
+<span class="status-diproses px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Diproses</span>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-1 mb-2">AC tidak dingin dan mengeluarkan suara bising yang sangat mengganggu di malam hari.</p>
+<div class="flex flex-wrap items-center gap-4 text-on-surface-variant text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span> 11 Okt 2023</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="person">person</span> Budi Santoso</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="assignment_ind">assignment_ind</span> Teknisi: Agus</span>
+</div>
+</div>
+<div class="flex gap-2 self-end sm:self-center">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+</div>
+</div>
+<!-- Complaint Card 3 -->
+<div class="complaint-card bg-surface p-5 rounded-xl transition-all border border-transparent hover:border-primary-container flex flex-col sm:flex-row gap-4 items-start sm:items-center">
+<div class="w-12 h-12 rounded-lg bg-surface-container-highest flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-3xl" data-icon="wifi_off">wifi_off</span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-center gap-3 mb-1">
+<span class="font-headline-sm text-headline-sm">Lantai 3</span>
+<span class="status-selesai px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest">Selesai</span>
+</div>
+<p class="text-on-surface-variant text-body-md line-clamp-1 mb-2">Koneksi WiFi di area lantai 3 sering terputus, terutama di kamar pojok 309-312.</p>
+<div class="flex flex-wrap items-center gap-4 text-on-surface-variant text-label-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span> 10 Okt 2023</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="task_alt">task_alt</span> Selesai: 11 Okt</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="verified">verified</span> Closed by Admin</span>
+</div>
+</div>
+<div class="flex gap-2 self-end sm:self-center">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined" data-icon="visibility">visibility</span></button>
+<button class="p-2 text-on-surface-variant hover:text-secondary transition-colors"><span class="material-symbols-outlined" data-icon="edit">edit</span></button>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-4 flex items-center justify-between">
+<p class="text-label-sm text-on-surface-variant">Menampilkan 1-10 dari 48 laporan</p>
+<div class="flex gap-2">
+<button class="p-2 rounded-lg border border-outline-variant bg-surface hover:bg-surface-container transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+</button>
+<button class="p-2 rounded-lg border border-outline-variant bg-surface-container text-primary font-bold">1</button>
+<button class="p-2 rounded-lg border border-outline-variant bg-surface hover:bg-surface-container transition-colors">2</button>
+<button class="p-2 rounded-lg border border-outline-variant bg-surface hover:bg-surface-container transition-colors">3</button>
+<button class="p-2 rounded-lg border border-outline-variant bg-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Sidebar Details/Summary -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<!-- Top Issues Chart-like Card -->
+<div class="bg-surface p-6 rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.05)]">
+<h4 class="font-headline-sm text-headline-sm mb-4">Top Isu Minggu Ini</h4>
+<div class="space-y-4">
+<div>
+<div class="flex justify-between text-label-md mb-1">
+<span>Listrik/AC</span>
+<span class="text-primary font-bold">35%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 35%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-md mb-1">
+<span>Air/Plumbing</span>
+<span class="text-primary font-bold">28%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 28%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-md mb-1">
+<span>Fasilitas WiFi</span>
+<span class="text-primary font-bold">20%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 20%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-label-md mb-1">
+<span>Kebersihan</span>
+<span class="text-primary font-bold">17%</span>
+</div>
+<div class="w-full bg-surface-container rounded-full h-2">
+<div class="bg-primary h-2 rounded-full" style="width: 17%"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Support Contact -->
+<div class="bg-primary-container p-6 rounded-xl text-on-primary-container shadow-lg flex flex-col items-center text-center">
+<div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mb-4">
+<span class="material-symbols-outlined text-4xl" data-icon="support_agent">support_agent</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-2">Butuh Bantuan Segera?</h4>
+<p class="text-body-md opacity-90 mb-6">Hubungi koordinasi teknisi pusat untuk penanganan darurat (kebakaran, kebocoran pipa utama, korsleting listrik).</p>
+<a class="w-full py-3 bg-white text-primary font-bold rounded-lg hover:bg-opacity-90 transition-all flex items-center justify-center gap-2" href="tel:08123456789">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+                            Hubungi Teknisi Pusat
+                        </a>
+</div>
+<!-- Recent Updates Timeline -->
+<div class="bg-surface p-6 rounded-xl shadow-[0px_4px_12px_rgba(0,0,0,0.05)]">
+<h4 class="font-headline-sm text-headline-sm mb-6">Aktivitas Terkini</h4>
+<div class="space-y-6 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-surface-container-highest">
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-[24px] h-[24px] bg-secondary rounded-full border-4 border-surface z-10"></div>
+<p class="text-label-md font-bold mb-1">Laporan #4211 Diselesaikan</p>
+<p class="text-body-md text-on-surface-variant">Admin mengonfirmasi perbaikan WiFi di Kamar 305.</p>
+<span class="text-label-sm text-on-surface-variant/70">15 menit yang lalu</span>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-[24px] h-[24px] bg-tertiary rounded-full border-4 border-surface z-10"></div>
+<p class="text-label-md font-bold mb-1">Teknisi Ditugaskan</p>
+<p class="text-body-md text-on-surface-variant">Bpk. Slamet ditugaskan untuk Kamar 108.</p>
+<span class="text-label-sm text-on-surface-variant/70">2 jam yang lalu</span>
+</div>
+<div class="relative pl-8">
+<div class="absolute left-0 top-1 w-[24px] h-[24px] bg-primary rounded-full border-4 border-surface z-10"></div>
+<p class="text-label-md font-bold mb-1">Laporan Baru Masuk</p>
+<p class="text-body-md text-on-surface-variant">Laporan kebocoran baru dari Kamar 204.</p>
+<span class="text-label-sm text-on-surface-variant/70">5 jam yang lalu</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<!-- Mobile Navigation Bar -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-surface border-t border-outline-variant flex justify-around items-center h-16 px-4 z-50">
+<a class="flex flex-col items-center text-primary" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-[10px] font-bold">Beranda</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="domain">domain</span>
+<span class="text-[10px] font-medium">Properti</span>
+</a>
+<div class="flex flex-col items-center -mt-8">
+<button class="w-12 h-12 bg-primary text-on-primary rounded-full shadow-lg flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</button>
+</div>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="report" style="font-variation-settings: 'FILL' 1;">report</span>
+<span class="text-[10px] font-medium">Laporan</span>
+</a>
+<a class="flex flex-col items-center text-on-surface-variant" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-medium">Profil</span>
+</a>
+</nav>
+<script>
+        // Simple Interaction logic
+        document.querySelectorAll('.complaint-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transition = 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+            });
+        });
+
+        // Mobile sidebar toggle (simulation)
+        const menuBtn = document.querySelector('button[class*="md:hidden"]');
+        if(menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                alert('Sidebar menu functionality would trigger here.');
+            });
+        }
+    </script>
+</body></html>

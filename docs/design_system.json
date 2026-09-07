@@ -1,0 +1,138 @@
+﻿{
+    "designSystem":  {
+                         "displayName":  "KelolaKos Design System",
+                         "styleGuidelines":  "## Brand \u0026 Style\nThe design system focuses on efficiency, reliability, and modern property management. It targets property owners and managers who require a high-density information environment that remains legible and stress-free. \n\nThe aesthetic is **Corporate Modern** with a focus on functional clarity. It utilizes a predominantly white and light gray canvas to let data and status indicators stand out. The interface communicates \"order\" and \"professionalism\" through consistent alignment, ample white space within components, and soft edges that reduce visual fatigue during long periods of administrative use.\n\n## Layout \u0026 Spacing\nThe layout follows a **Fixed Sidebar** model for constant navigation access.\n- **Sidebar:** 260px width, fixed to the left, using a white background to separate it from the light gray main content area.\n- **Topbar:** 72px height, containing global search, notification triggers, and user profile. It should remain sticky.\n- **Main Content:** Utilizes a fluid grid within a max-width container of 1440px for wide screens. \n- **Rhythm:** An 8px base grid governs all spacing. Summary cards should span 3 columns in a 12-column grid (4 cards per row) on desktop, reflowing to 1 or 2 columns on mobile.\n\n## Elevation \u0026 Depth\nDepth is created through **Ambient Shadows** and tonal separation rather than heavy borders.\n- **Level 0 (Background):** `#F9FAFB` – The base canvas.\n- **Level 1 (Surface):** `#FFFFFF` – Sidebar and Main Cards. Use a soft shadow: `0px 4px 12px rgba(0, 0, 0, 0.05)`.\n- **Level 2 (Interactive):** Hover states for cards or dropdowns. Use a slightly deeper shadow: `0px 8px 24px rgba(0, 0, 0, 0.08)`.\n- **Modals:** High elevation with `0px 20px 48px rgba(0, 0, 0, 0.12)` and a 40% opacity neutral-dark overlay.\n\n## Components\n- **Summary Cards:** Feature a subtle 10% opacity gradient of the primary color in the top-right corner. Large numeric values use `headline-md`.\n- **Status Badges:** Use a \"soft tint\" approach (e.g., Success badge has `#00B894` text on a 10% opacity green background) for a professional, non-aggressive look.\n- **Sidebar:** Section labels (e.g., \"MANAGEMENT\", \"REPORTS\") use `label-md` with low-contrast gray. Active items use the primary purple for the icon and text, with a 4px vertical bar on the far left.\n- **Tables:** No vertical borders. Use 1px light gray horizontal dividers. Rows should have a subtle background color change on hover.\n- **Input Fields:** White background with a 1px gray border. On focus, transition to a primary purple border with a 3px soft purple outer glow.\n- **Buttons:** Primary buttons use a solid primary purple. Secondary buttons use a white background with a gray border. Both should have a subtle `0.5s` transition on hover.",
+                         "theme":  {
+                                       "bodyFont":  "INTER",
+                                       "bodyFontFamily":  "Inter",
+                                       "colorMode":  "LIGHT",
+                                       "colorVariant":  "FIDELITY",
+                                       "customColor":  "#6c5ce7",
+                                       "designMd":  "---\nname: KelolaKos Design System\ncolors:\n  surface: \u0027#f1fbff\u0027\n  surface-dim: \u0027#d1dce0\u0027\n  surface-bright: \u0027#f1fbff\u0027\n  surface-container-lowest: \u0027#ffffff\u0027\n  surface-container-low: \u0027#eaf5fa\u0027\n  surface-container: \u0027#e4f0f4\u0027\n  surface-container-high: \u0027#dfeaef\u0027\n  surface-container-highest: \u0027#d9e4e9\u0027\n  on-surface: \u0027#131d21\u0027\n  on-surface-variant: \u0027#474554\u0027\n  inverse-surface: \u0027#283236\u0027\n  inverse-on-surface: \u0027#e7f3f7\u0027\n  outline: \u0027#787586\u0027\n  outline-variant: \u0027#c8c4d7\u0027\n  surface-tint: \u0027#5847d2\u0027\n  primary: \u0027#5341cd\u0027\n  on-primary: \u0027#ffffff\u0027\n  primary-container: \u0027#6c5ce7\u0027\n  on-primary-container: \u0027#faf6ff\u0027\n  inverse-primary: \u0027#c6bfff\u0027\n  secondary: \u0027#006b55\u0027\n  on-secondary: \u0027#ffffff\u0027\n  secondary-container: \u0027#6dfad2\u0027\n  on-secondary-container: \u0027#00725b\u0027\n  tertiary: \u0027#993a24\u0027\n  on-tertiary: \u0027#ffffff\u0027\n  tertiary-container: \u0027#b95239\u0027\n  on-tertiary-container: \u0027#fff6f4\u0027\n  error: \u0027#ba1a1a\u0027\n  on-error: \u0027#ffffff\u0027\n  error-container: \u0027#ffdad6\u0027\n  on-error-container: \u0027#93000a\u0027\n  primary-fixed: \u0027#e4dfff\u0027\n  primary-fixed-dim: \u0027#c6bfff\u0027\n  on-primary-fixed: \u0027#160066\u0027\n  on-primary-fixed-variant: \u0027#4029ba\u0027\n  secondary-fixed: \u0027#6dfad2\u0027\n  secondary-fixed-dim: \u0027#4bddb7\u0027\n  on-secondary-fixed: \u0027#002018\u0027\n  on-secondary-fixed-variant: \u0027#005140\u0027\n  tertiary-fixed: \u0027#ffdad2\u0027\n  tertiary-fixed-dim: \u0027#ffb4a3\u0027\n  on-tertiary-fixed: \u0027#3d0700\u0027\n  on-tertiary-fixed-variant: \u0027#812914\u0027\n  background: \u0027#f1fbff\u0027\n  on-background: \u0027#131d21\u0027\n  surface-variant: \u0027#d9e4e9\u0027\ntypography:\n  display-lg:\n    fontFamily: Inter\n    fontSize: 32px\n    fontWeight: \u0027700\u0027\n    lineHeight: 40px\n    letterSpacing: -0.02em\n  headline-md:\n    fontFamily: Inter\n    fontSize: 24px\n    fontWeight: \u0027600\u0027\n    lineHeight: 32px\n    letterSpacing: -0.01em\n  headline-sm:\n    fontFamily: Inter\n    fontSize: 20px\n    fontWeight: \u0027600\u0027\n    lineHeight: 28px\n  body-lg:\n    fontFamily: Inter\n    fontSize: 16px\n    fontWeight: \u0027400\u0027\n    lineHeight: 24px\n  body-md:\n    fontFamily: Inter\n    fontSize: 14px\n    fontWeight: \u0027400\u0027\n    lineHeight: 20px\n  label-md:\n    fontFamily: Inter\n    fontSize: 13px\n    fontWeight: \u0027600\u0027\n    lineHeight: 18px\n    letterSpacing: 0.05em\n  label-sm:\n    fontFamily: Inter\n    fontSize: 12px\n    fontWeight: \u0027500\u0027\n    lineHeight: 16px\n  headline-md-mobile:\n    fontFamily: Inter\n    fontSize: 20px\n    fontWeight: \u0027600\u0027\n    lineHeight: 28px\nrounded:\n  sm: 0.25rem\n  DEFAULT: 0.5rem\n  md: 0.75rem\n  lg: 1rem\n  xl: 1.5rem\n  full: 9999px\nspacing:\n  sidebar-width: 260px\n  topbar-height: 72px\n  gutter: 24px\n  container-padding: 32px\n  stack-sm: 8px\n  stack-md: 16px\n  stack-lg: 24px\n---\n\n## Brand \u0026 Style\nThe design system focuses on efficiency, reliability, and modern property management. It targets property owners and managers who require a high-density information environment that remains legible and stress-free. \n\nThe aesthetic is **Corporate Modern** with a focus on functional clarity. It utilizes a predominantly white and light gray canvas to let data and status indicators stand out. The interface communicates \"order\" and \"professionalism\" through consistent alignment, ample white space within components, and soft edges that reduce visual fatigue during long periods of administrative use.\n\n## Colors\nThe color palette is designed for high-signal data visualization.\n- **Primary (Purple):** Used for primary actions, active navigation states, and branding accents.\n- **Success (Green):** Indicates occupied units, completed payments, and healthy growth metrics.\n- **Warning (Orange):** Highlights upcoming expirations or pending maintenance requests.\n- **Danger (Red):** Reserved for overdue payments, emergency alerts, and destructive actions.\n- **Neutral/Surface:** A range of grays from `#F9FAFB` (page background) to `#FFFFFF` (card/sidebar surfaces) ensures a clear distinction between the canvas and interactive elements.\n\n## Typography\nThis design system utilizes **Inter** exclusively to leverage its exceptional legibility in UI environments.\n- **Headlines:** Bold weights with slight negative letter-spacing to create a \"tight\" professional feel for dashboard titles and metric summaries.\n- **Body:** Standardized at 14px for data density without sacrificing readability.\n- **Labels:** Uppercase styles are used for sidebar section headers and table column headers to create a distinct hierarchy between structural labels and dynamic content.\n\n## Layout \u0026 Spacing\nThe layout follows a **Fixed Sidebar** model for constant navigation access.\n- **Sidebar:** 260px width, fixed to the left, using a white background to separate it from the light gray main content area.\n- **Topbar:** 72px height, containing global search, notification triggers, and user profile. It should remain sticky.\n- **Main Content:** Utilizes a fluid grid within a max-width container of 1440px for wide screens. \n- **Rhythm:** An 8px base grid governs all spacing. Summary cards should span 3 columns in a 12-column grid (4 cards per row) on desktop, reflowing to 1 or 2 columns on mobile.\n\n## Elevation \u0026 Depth\nDepth is created through **Ambient Shadows** and tonal separation rather than heavy borders.\n- **Level 0 (Background):** `#F9FAFB` – The base canvas.\n- **Level 1 (Surface):** `#FFFFFF` – Sidebar and Main Cards. Use a soft shadow: `0px 4px 12px rgba(0, 0, 0, 0.05)`.\n- **Level 2 (Interactive):** Hover states for cards or dropdowns. Use a slightly deeper shadow: `0px 8px 24px rgba(0, 0, 0, 0.08)`.\n- **Modals:** High elevation with `0px 20px 48px rgba(0, 0, 0, 0.12)` and a 40% opacity neutral-dark overlay.\n\n## Shapes\nThe shape language is friendly yet structured.\n- **Components:** Buttons and input fields use a `0.5rem` (8px) radius.\n- **Containers:** Summary cards and the main sidebar container use `rounded-lg` (16px) to emphasize the \"clean dashboard\" look.\n- **Badges:** Use a pill-shaped `rounded-xl` (24px+) for status indicators to distinguish them from interactive buttons.\n\n## Components\n- **Summary Cards:** Feature a subtle 10% opacity gradient of the primary color in the top-right corner. Large numeric values use `headline-md`.\n- **Status Badges:** Use a \"soft tint\" approach (e.g., Success badge has `#00B894` text on a 10% opacity green background) for a professional, non-aggressive look.\n- **Sidebar:** Section labels (e.g., \"MANAGEMENT\", \"REPORTS\") use `label-md` with low-contrast gray. Active items use the primary purple for the icon and text, with a 4px vertical bar on the far left.\n- **Tables:** No vertical borders. Use 1px light gray horizontal dividers. Rows should have a subtle background color change on hover.\n- **Input Fields:** White background with a 1px gray border. On focus, transition to a primary purple border with a 3px soft purple outer glow.\n- **Buttons:** Primary buttons use a solid primary purple. Secondary buttons use a white background with a gray border. Both should have a subtle `0.5s` transition on hover.",
+                                       "font":  "INTER",
+                                       "headlineFont":  "INTER",
+                                       "headlineFontFamily":  "Inter",
+                                       "labelFont":  "INTER",
+                                       "labelFontFamily":  "Inter",
+                                       "namedColors":  {
+                                                           "background":  "#f1fbff",
+                                                           "error":  "#ba1a1a",
+                                                           "error_container":  "#ffdad6",
+                                                           "inverse_on_surface":  "#e7f3f7",
+                                                           "inverse_primary":  "#c6bfff",
+                                                           "inverse_surface":  "#283236",
+                                                           "on_background":  "#131d21",
+                                                           "on_error":  "#ffffff",
+                                                           "on_error_container":  "#93000a",
+                                                           "on_primary":  "#ffffff",
+                                                           "on_primary_container":  "#faf6ff",
+                                                           "on_primary_fixed":  "#160066",
+                                                           "on_primary_fixed_variant":  "#4029ba",
+                                                           "on_secondary":  "#ffffff",
+                                                           "on_secondary_container":  "#00725b",
+                                                           "on_secondary_fixed":  "#002018",
+                                                           "on_secondary_fixed_variant":  "#005140",
+                                                           "on_surface":  "#131d21",
+                                                           "on_surface_variant":  "#474554",
+                                                           "on_tertiary":  "#ffffff",
+                                                           "on_tertiary_container":  "#fff6f4",
+                                                           "on_tertiary_fixed":  "#3d0700",
+                                                           "on_tertiary_fixed_variant":  "#812914",
+                                                           "outline":  "#787586",
+                                                           "outline_variant":  "#c8c4d7",
+                                                           "primary":  "#5341cd",
+                                                           "primary_container":  "#6c5ce7",
+                                                           "primary_fixed":  "#e4dfff",
+                                                           "primary_fixed_dim":  "#c6bfff",
+                                                           "secondary":  "#006b55",
+                                                           "secondary_container":  "#6dfad2",
+                                                           "secondary_fixed":  "#6dfad2",
+                                                           "secondary_fixed_dim":  "#4bddb7",
+                                                           "surface":  "#f1fbff",
+                                                           "surface_bright":  "#f1fbff",
+                                                           "surface_container":  "#e4f0f4",
+                                                           "surface_container_high":  "#dfeaef",
+                                                           "surface_container_highest":  "#d9e4e9",
+                                                           "surface_container_low":  "#eaf5fa",
+                                                           "surface_container_lowest":  "#ffffff",
+                                                           "surface_dim":  "#d1dce0",
+                                                           "surface_tint":  "#5847d2",
+                                                           "surface_variant":  "#d9e4e9",
+                                                           "tertiary":  "#993a24",
+                                                           "tertiary_container":  "#b95239",
+                                                           "tertiary_fixed":  "#ffdad2",
+                                                           "tertiary_fixed_dim":  "#ffb4a3"
+                                                       },
+                                       "overrideNeutralColor":  "#636e72",
+                                       "overridePrimaryColor":  "#6c5ce7",
+                                       "overrideSecondaryColor":  "#00b894",
+                                       "overrideTertiaryColor":  "#e17055",
+                                       "roundness":  "ROUND_EIGHT",
+                                       "spacing":  {
+                                                       "container-padding":  "32px",
+                                                       "gutter":  "24px",
+                                                       "sidebar-width":  "260px",
+                                                       "stack-lg":  "24px",
+                                                       "stack-md":  "16px",
+                                                       "stack-sm":  "8px",
+                                                       "topbar-height":  "72px"
+                                                   },
+                                       "spacingScale":  2,
+                                       "typography":  {
+                                                          "body-lg":  {
+                                                                          "fontFamily":  "Inter",
+                                                                          "fontSize":  "16px",
+                                                                          "fontWeight":  "400",
+                                                                          "lineHeight":  "24px"
+                                                                      },
+                                                          "body-md":  {
+                                                                          "fontFamily":  "Inter",
+                                                                          "fontSize":  "14px",
+                                                                          "fontWeight":  "400",
+                                                                          "lineHeight":  "20px"
+                                                                      },
+                                                          "display-lg":  {
+                                                                             "fontFamily":  "Inter",
+                                                                             "fontSize":  "32px",
+                                                                             "fontWeight":  "700",
+                                                                             "letterSpacing":  "-0.02em",
+                                                                             "lineHeight":  "40px"
+                                                                         },
+                                                          "headline-md":  {
+                                                                              "fontFamily":  "Inter",
+                                                                              "fontSize":  "24px",
+                                                                              "fontWeight":  "600",
+                                                                              "letterSpacing":  "-0.01em",
+                                                                              "lineHeight":  "32px"
+                                                                          },
+                                                          "headline-md-mobile":  {
+                                                                                     "fontFamily":  "Inter",
+                                                                                     "fontSize":  "20px",
+                                                                                     "fontWeight":  "600",
+                                                                                     "lineHeight":  "28px"
+                                                                                 },
+                                                          "headline-sm":  {
+                                                                              "fontFamily":  "Inter",
+                                                                              "fontSize":  "20px",
+                                                                              "fontWeight":  "600",
+                                                                              "lineHeight":  "28px"
+                                                                          },
+                                                          "label-md":  {
+                                                                           "fontFamily":  "Inter",
+                                                                           "fontSize":  "13px",
+                                                                           "fontWeight":  "600",
+                                                                           "letterSpacing":  "0.05em",
+                                                                           "lineHeight":  "18px"
+                                                                       },
+                                                          "label-sm":  {
+                                                                           "fontFamily":  "Inter",
+                                                                           "fontSize":  "12px",
+                                                                           "fontWeight":  "500",
+                                                                           "lineHeight":  "16px"
+                                                                       }
+                                                      }
+                                   }
+                     },
+    "name":  "assets/f81f1a6ef08a47b6b085ffd9bdd32275",
+    "version":  "1"
+}
